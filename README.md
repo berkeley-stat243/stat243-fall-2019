@@ -23,7 +23,7 @@ Instructor office hours:
 
 ## Software
 
-The `howtos` directory has information on installing and/or getting access to the software you'll need for the course. In particular, in the second week of class you'll need to get access to the UNIX command line in some fashion. See https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/howtos/accessingUnixCommandline.md for some options on how to do this. 
+The `howtos` directory has information on installing and/or getting access to the software you'll need for the course. In particular, in the second week of class you'll need to get access to the UNIX command line in some fashion. See https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/howtos/accessingUnixCommandLine.md for some options on how to do this. 
 
 ## Submitting assignments
 
