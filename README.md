@@ -1,5 +1,7 @@
 # stat243-fall-2019
-This repository holds all course materials for the fall 2019 offering of Statistics 243 at UC Berkeley. 
+This repository holds all course materials for the fall 2019 offering of Statistics 243 at UC Berkeley.
+
+You can view the [syllabus](https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/syllabus/syllabus.pdf)
 
 Note that the various tutorials referred to in the class materials (e.g., the UNIX and bash shell tutorials, the dynamic documents tutorial, the Git tutorial, the string processing tutorial, etc.), are available [here](http://statistics.berkeley.edu/computing/training/tutorials).
 
