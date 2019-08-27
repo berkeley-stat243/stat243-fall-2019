@@ -24,12 +24,18 @@ Note that when you install Git on Windows, you will get Git Bash. While you can 
 
 If you have access to a Linux machine, you very likely know how to access a terminal.
 
-### Access via the Statistical Computing Facility
+### Access via Datahub (provided by UC Berkeley's Data Science Education Program)
+
+1) Go to [https://datahub.berkeley.edu](https://datahub.berkeley.edu)
+2) Click on `Sign in with bCourses`, sign in via CalNet, and authorize Datahub to have access to your account.
+3) In the mid-upper right, click on `New` and `Terminal`.
+4) To end your session, click on `Control Panel` and `Stop My Server`. Note that `Logout` will not end your running session, it will just log you out of it.
+
+### Access via the Statistical Computing Facility (SCF)
+
+Those of you in the Statistics Department can access Linux machines vai the SCF.
 
 1. With an SCF account (please see the main course page for info on how to get an account), you can login to our various Linux servers and access a bash shell that way. Please see [http://statistics.berkeley.edu/computing/access](http://statistics.berkeley.edu/computing/access).
 
 2. With an SCF account, you can also access a bash shell via the SCF Jupyterhub interface; please see the JupyterLogin.md instructions. 
 
-### Access via Datahub
-
-** UNDER CONSTRUCTION: CJP to check with Ryan **

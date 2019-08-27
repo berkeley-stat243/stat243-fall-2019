@@ -1,3 +1,5 @@
+### On your laptop
+
 If your version of R is older than 3.4.0, please install the latest version, though you may be fine with older versions.
 
 To install R, see:
@@ -14,3 +16,7 @@ Verify that you can install add-on R packages by installing the 'fields' package
   * Create the directory specified in the result that R returns, e.g., on a Mac, this might be `~/Library/R/3.5/library`.
 
 For more detailed installation instructions for Windows, see the windowsInstall.html file.
+
+### Via Datahub
+
+See the instructions in `accessingUnixCommandLine.html` for how to login to Datahub. Then in the mid-upper right, click on `New` and `RStudio`. Alternatively, to go directly to RStudio, go to [https://r.datahub.berkeley.edu](https://r.datahub.berkeley.edu).

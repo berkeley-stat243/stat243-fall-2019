@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage{times,graphics}
@@ -17,16 +19,16 @@ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -102,7 +104,7 @@ Applications -> Utilities -> Terminal
 There are a variety of ways to get access to a UNIX-style command line environme
 nt, outlined in 
 \family typewriter
-howtos/accessingUnixCommandline.txt
+howtos/accessingUnixCommandline.html
 \family default
  in this repository.
  If you're using your own Mac, you should install the 
@@ -150,85 +152,7 @@ UNIX basics
 \begin_layout Standard
 Please see the material in our tutorial on the basics of UNIX to get up
  to speed on working in a UNIX-style command line environment.
- The tutorial is presented in the context of the BCE virtual machine, but
- you should be able to replicate what is done if you use other ways to access
- a command line environment.
  
-\end_layout
-
-\begin_layout Standard
-To connect to a remote machine, you need to use SSH.
- SSH is available as 
-\family typewriter
-ssh
-\family default
- when you are on the UNIX command line.
- There are also SSH clients for Windows.
- For more information on SSH client programs and on using SSH, please see
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "this webpage"
-target "http://statistics.berkeley.edu/computing/ssh"
-
-\end_inset
-
-.
- Here's an example of connecting to one of the SCF machines (this assumes
- you have an SCF account, which you may, and that your user name is paciorek,
- which it is not).
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-> ssh paciorek@radagast.berkeley.edu
-\end_layout
-
-\begin_layout Standard
-To copy files between machines, we can use 
-\emph on
-scp
-\emph default
-, which has similar options to 
-\emph on
-cp
-\emph default
-.
- The first command here copies a local file to a remote machine.
- The second copies from a remote machine to the machine you are on.
- You can use relative paths to refer to locations on the local machine.
- On the remote machine all paths need to be absolute or to be relative to
- your home directory on that machine.
- Again, this assumes you have an SCF account.
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-> scp file.txt paciorek@radagast.berkeley.edu:~/research/.
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-> scp paciorek@radagast.berkeley.edu:/data/file.txt 
-\begin_inset Newline newline
-\end_inset
-
-~/research/renamed.txt
-\end_layout
-
-\begin_layout Standard
-There are also client programs for file transfer; see 
-\begin_inset CommandInset href
-LatexCommand href
-name "this webpage"
-target "http://statistics.berkeley.edu/computing/copying-files"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Section
@@ -367,6 +291,85 @@ target "http://pcottle.github.io/learnGitBranching/"
 \end_layout
 
 \begin_layout Section
+Connecting to other machines
+\end_layout
+
+\begin_layout Standard
+To connect to a remote machine, you need to use SSH.
+ SSH is available as 
+\family typewriter
+ssh
+\family default
+ when you are on the UNIX command line.
+ There are also SSH clients for Windows.
+ For more information on SSH client programs and on using SSH, please see
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "this webpage"
+target "http://statistics.berkeley.edu/computing/ssh"
+
+\end_inset
+
+.
+ Here's an example of connecting to one of the SCF machines (this assumes
+ you have an SCF account, which you may, and that your user name is paciorek,
+ which it is not).
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+> ssh paciorek@radagast.berkeley.edu
+\end_layout
+
+\begin_layout Standard
+To copy files between machines, we can use 
+\emph on
+scp
+\emph default
+, which has similar options to 
+\emph on
+cp
+\emph default
+.
+ The first command here copies a local file to a remote machine.
+ The second copies from a remote machine to the machine you are on.
+ You can use relative paths to refer to locations on the local machine.
+ On the remote machine all paths need to be absolute or to be relative to
+ your home directory on that machine.
+ Again, this assumes you have an SCF account.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+> scp file.txt paciorek@radagast.berkeley.edu:~/research/.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+> scp paciorek@radagast.berkeley.edu:/data/file.txt 
+\begin_inset Newline newline
+\end_inset
+
+~/research/renamed.txt
+\end_layout
+
+\begin_layout Standard
+There are also client programs for file transfer; see 
+\begin_inset CommandInset href
+LatexCommand href
+name "this webpage"
+target "http://statistics.berkeley.edu/computing/copying-files"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
 Editors
 \end_layout
 
@@ -375,7 +378,8 @@ For statistical computing, we need a text editor, not a word processor,
  because we're going to be operating on files of code and data files, for
  which word processing formatting gets in the way.
  Don't use Microsoft Word or Google Docs to edit code files or Markdown/R
- Markdown/LaTeX.
+ Markdown/\SpecialChar LaTeX
+.
 \end_layout
 
 \begin_layout Subsection
@@ -384,6 +388,10 @@ Some useful editors
 
 \begin_layout Itemize
 various editors available on all operating systems:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -446,8 +454,12 @@ Basic emacs
 emacs
 \emph default
  has special modes for different types of files: R code files, C code files,
- Latex files -- it's worth your time to figure out how to set this up on
+ Latex files – it's worth your time to figure out how to set this up on
  your machine for the kinds of files you often work on
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -463,6 +475,10 @@ For working with R, ESS (emacs speaks statistics) mode is helpful.
 To open emacs in the terminal window rather than as a new window, which
  is handy when it's too slow (or impossible) to pass (i.e., tunnel) the graphical
  emacs window through ssh:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -498,7 +514,7 @@ emacs
 \begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>

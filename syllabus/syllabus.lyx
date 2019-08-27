@@ -140,19 +140,18 @@ Informal prerequisites: If you are not a statistics or biostatistics graduate
  student, please chat with me if you're not sure if this course makes sense
  for you.
  A background in calculus, linear algebra, probability and statistics is
- expected, as well as a basic ability to operate on a computer (but not
- necessary a UNIX variant).
+ expected, as well as a basic ability to operate on a computer (but I do
+ not assume familiarity with the UNIX-style command line/terminal/shell).
  Furthermore, I'm expecting you will know the basics of R, at the level
- of the material in the R bootcamp offered Aug.
- 24-25, 2019 [specifically the material in Modules 1-5, but don't worry
- about environments and scoping].
+ of the Modules 1-5 in the R bootcamp offered Aug.
+ 24-25, 2019.
  If you don't have that background you'll need to spend time in the initial
  couple weeks getting up to speed.
  All the material from the bootcamp is 
 \begin_inset CommandInset href
 LatexCommand href
 name "available here"
-target "https://github.com/berkeley-scf/r-bootcamp-2018/archive/master.zip"
+target "https://github.com/berkeley-scf/r-bootcamp-fall-2019/archive/master.zip"
 
 \end_inset
 
@@ -175,7 +174,7 @@ operate effectively in a UNIX environment and on remote servers;
 
 \begin_layout Itemize
 program effectively in R with an advanced knowledge of R functionality and
- an understanding of general programming concepts;
+ an understanding of general programming concepts and principles;
 \end_layout
 
 \begin_layout Itemize
@@ -185,7 +184,8 @@ c computing practices; and
 
 \begin_layout Itemize
 understand in depth and be able to make use of principles of numerical linear
- algebra, optimization, and simulation for statistics-related research.
+ algebra, optimization, and simulation for statistics- and data science-related
+ analyses and research.
 \end_layout
 
 \begin_layout Subsection*
@@ -238,8 +238,8 @@ When to see us about an assignment
  You don't want to be futilely spinning your wheels for a long time getting
  nowhere.
  That said, before coming to see us about a difficulty, you should try something
- a few different ways and try to define/summarize what is going wrong or
- where you are getting stuck.
+ a few different ways and define/summarize what is going wrong or where
+ you are getting stuck.
  
 \end_layout
 
@@ -267,18 +267,12 @@ target "https://github.com/berkeley-stat243/stat243-fall-2019"
 bCourses site for online course discussion, announcements and Q&A: 
 \begin_inset CommandInset href
 LatexCommand href
-target "https://xyz.com"
+name "https://bcourses.berkeley.edu/courses/1484436"
+target "https://bcourses.berkeley.edu/courses/1484436"
 
 \end_inset
 
- or email to 
-\begin_inset CommandInset href
-LatexCommand href
-target "xyz@berkeley.edu"
-
-\end_inset
-
-
+.
 \end_layout
 
 \begin_layout Itemize
@@ -314,25 +308,25 @@ File->Export->\SpecialChar LaTeX
 (pdflatex)
 \family default
 .
- For some material, we will make use of tutorials provided by the SCF through
- joint work of Chris Paciorek and Jarrod Millman.
+ For some material, we will make use of tutorials provided by the SCF.
 \end_layout
 
 \begin_layout Standard
-We will use the bCourse site for communication (announcements, questions,
+We will use the bCourses site for communication (announcements, questions,
  and discussion).
  You should ask questions about class material and problem sets through
- the bCourses website or by sending email to the list.
- Please use this site for your questions so that either the GSI or I can
- respond and so that everyone can benefit from the discussion.
+ the bCourses website.
+ Please use this site for your questions so that either Jared or I can respond
+ and so that everyone can benefit from the discussion.
  I suggest you to modify your settings on bCourses so you are informed by
  email of postings.
- I strongly encourage you to respond to each other's questions as well,
- although of course you should not provide a solution to a problem set problem.
+ I strongly encourage you to respond to or comment on each other's questions
+ as well (this will help your class participation grade), although of course
+ you should not provide a solution to a problem set problem.
  If you have a specific administrative question you need to direct just
  to me, it's fine to email me directly.
  But if you simply want to privately ask a question about content, then
- just come to an office hour.
+ just come to an office hour or see me after class.
  
 \end_layout
 
@@ -613,7 +607,9 @@ ooting software during the early weeks.
  of problem set solutions.
  If anyone cannot make either section time, please see me to discuss alternative
  arrangements.
- If you can't make your assigned time, please also see me.
+ The first section generally has more demand, so to avoid having too many
+ people in the room, you should go to your assigned section unless you talk
+ to me first.
 \end_layout
 
 \begin_layout Subsection*
@@ -621,18 +617,9 @@ Computing Resources
 \end_layout
 
 \begin_layout Standard
-[mention datahub]
-\end_layout
-
-\begin_layout Standard
 Most work for the course can be done on your laptop.
- You can also make use of the Statistical Computing Facility (SCF) network
- of Linux and Mac computers.
- Anyone not in Statistics who would like an SCF account is also welcome
- to get one for the semester - see Chris for an account form.
- The computer rooms in 342 and 432 Evans provide Mac desktops; you can also
- remotely log in to the SCF system from other campus computers or from home.
- 
+ Later in the course we'll also use the campus Linux cluster, called Savio.
+ You can also use the campus Datahub to access a bash shell or run RStudio.
 \end_layout
 
 \begin_layout Standard
@@ -656,9 +643,9 @@ Python (later in the course)
 \end_layout
 
 \begin_layout Standard
-Some tips for software installation are in the 'howtos' directory of the
- Git repository.
- In particular, please see 'accessingUnixCommandline.txt' for options of
+Some tips for software installation (and access to Datahub) are in the 'howtos'
+ directory of the Git repository.
+ In particular, please see 'accessingUnixCommandLine.html' for options of
  how to access a bash shell.
 \end_layout
 
@@ -698,9 +685,8 @@ Student backgrounds with computing will vary.
 
 \begin_layout Standard
 Finally, screencasts will be available through the bCourses Course Capture
- feature.
- Please login to your bConnected account and go to the Course Captures tab
- on the bCourses page for the class.
+ feature, available on the Course Captures tab on the bCourses page for
+ the class.
  Note that the screencasts will necessarily be more effective for the computer
  demos and will miss material that I write on the board.
 \end_layout
@@ -774,13 +760,20 @@ A PDF submitted electronically through bCourses
 \series bold
 by the start of class (2 pm)
 \series default
- on the due date, and [CHECK WITH JARED ON THIS]
+ on the due date, and 
 \end_layout
 
 \begin_layout Enumerate
 An electronic copy of the PDF, code file, and Markdown/knitr document pushed
  to your class Github repository, following the instructions to be provided
  by the GSI.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+On-time submission will be determined based on the time stamp of when the
+ PDF is submitted to bCourses.
 \end_layout
 
 \end_deeper
@@ -861,8 +854,8 @@ The grading scheme for problem sets is as follows.
 \end_layout
 
 \begin_layout Standard
-For component #3, many of you will get a score of 2 for some problem sets
- as you develop good coding practices.
+For components #1 and #3, many of you will get a score of 2 for some problem
+ sets as you develop good coding practices.
  You can still get an A in the class despite this.
  
 \end_layout
@@ -912,8 +905,8 @@ your solution to a problem set (writeup and code) must be your own
 , and you'll hear from me if either look too similar to someone else's.
  
 \series bold
-You should note on your problem set solution any fellow students who you
- worked/consulted with.
+You MUST note on your problem set solution any fellow students who you worked/co
+nsulted with.
 
 \series default
  
@@ -1136,7 +1129,7 @@ Introduction to UNIX, operating on a compute server (1 day)
 \end_layout
 
 \begin_layout Enumerate
-Data formats, data access, webscraping, text processing (4 days)
+Data formats, data access, webscraping (2 days)
 \end_layout
 
 \begin_layout Enumerate
@@ -1148,10 +1141,9 @@ The bash shell and shell scripting, version control (3 days)
 \end_layout
 
 \begin_layout Enumerate
-Programming concepts and advanced R programming: functions and variable
- scope, data and text manipulation, strings and regular expressions, environment
-s, object oriented programming, efficient programming, computing on the
- language (9 days)
+Programming concepts and advanced R programming: text processing and regular
+ expressions, functions and variable scope, environments, object oriented
+ programming, efficient programming (9 days)
 \end_layout
 
 \begin_layout Enumerate
