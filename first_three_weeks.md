@@ -5,9 +5,9 @@ https://forms.gle/reY7xndSN2PVqcEj8.  This is required and will be 'counted' in 
 
 - (Required) By Friday August 30 at 2 pm, fill out this survey of potential office hour times: http://whenisgood.net/wqcesmk
 
-- (Optional) By Friday August 30 at 2 pm, fill out this survey of potential times for the extra R help session: http://whenisgood.net/4gikaif
+- (Optional) By Friday August 30 at 2 pm, ONLY if you would like to attend the optional R help session, fill out this survey of potential times for the extra R help session: http://whenisgood.net/4gikaif
 
-- (Optional) By Friday August 30 at 2 pm, fill out this survey of potential times for the extra UNIX command-line help session: http://whenisgood.net/4j2fi3m
+- (Optional) By Friday August 30 at 2 pm, ONLY if you would like to attend the optional UNIX help session (either for getting access to a UNIX-style command line or for basic command line usage) fill out this survey of potential times for the extra UNIX command-line help session: http://whenisgood.net/4j2fi3m
 
 - (Required) By Friday August 30 at 2 pm, please read Sections 1, 2, and 5 of Unit 2, as I'll just touch on an item or two from those sections in class and will assume you're familiar with getting CSV and similar data into and out of R and some of the pitfalls that can arise. 
 
@@ -25,7 +25,7 @@ the week of September 2.
 
 - (Required) By Monday September 9 at 2 pm, read through this [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash/archive/master.zip). Work through the first 10 problems at the end of the tutorial and submit answers via bCourses as a text file or PDF. This is not a formal problem set, so you don't need to worry about formatting nor about explaining/commenting your answers, nor do you need to put your answers in your Github class repository. In fact it's even fine with me if you hand-write the answers and scan them to an electronic document. I just want to make sure you've worked through the tutorial. 
 
-You don't need to look at all the sections in the tutorial. Please see
+   You don't need to look at all the sections in the tutorial. Please see
 units/unit4-bash.pdf in the course repository for a list of the
 sections you can skip over. I'll be doing demonstrations on using the
 bash shell in class on Friday September 6, so that will be helpful as you work through the tutorial. 
