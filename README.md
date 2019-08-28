@@ -9,7 +9,7 @@ If you're not yet familiar with Git, go to the upper right of this page and clic
 
 If you would like to audit the class, enroll as a UC Berkeley undergraduate, or enroll as a concurrent enrollment student (i.e., for visiting students), or for some other reason are not enrolled, please fill out [this survey](https://forms.gle/reY7xndSN2PVqcEj8) as soon as possible. All those enrolled or wishing to take the class should have filled it out by Friday at 2 pm.
 
-Please see https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/assignments/first_three_weeks.md for information on what is due during the initial weeks of class.
+Please see https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/first_three_weeks.md for information on what is due during the initial weeks of class.
 
 ## Logistics
 

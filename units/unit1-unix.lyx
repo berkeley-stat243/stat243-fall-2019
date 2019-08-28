@@ -104,7 +104,7 @@ Applications -> Utilities -> Terminal
 There are a variety of ways to get access to a UNIX-style command line environme
 nt, outlined in 
 \family typewriter
-howtos/accessingUnixCommandline.html
+howtos/accessingUnixCommandLine.html
 \family default
  in this repository.
  If you're using your own Mac, you should install the 

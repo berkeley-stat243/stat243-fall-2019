@@ -2646,7 +2646,11 @@ Accessing dynamic pages
 Some websites dynamically change in reaction to the user behavior.
  In these cases you need a tool that can mimic the behavior of a human interacti
 ng with a site.
- 
+ Some options are:
+\end_layout
+
+\begin_layout Itemize
+
 \emph on
 selenium
 \emph default
@@ -2655,6 +2659,18 @@ selenium
 RSelenium
 \emph default
  wrapper for R) is a popular tool for doing this.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+splash
+\emph default
+ (and the 
+\emph on
+splashr
+\emph default
+ wrapper for R) is another approach.
 \end_layout
 
 \begin_layout Section
