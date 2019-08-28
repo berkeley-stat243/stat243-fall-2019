@@ -150,9 +150,25 @@ UNIX basics
 \end_layout
 
 \begin_layout Standard
-Please see the material in our tutorial on the basics of UNIX to get up
- to speed on working in a UNIX-style command line environment.
+Please see the material in our tutorial on the 
+\emph on
+basics of UNIX
+\emph default
+ to get up to speed on working in a UNIX-style command line environment.
  
+\end_layout
+
+\begin_layout Standard
+For an alternative introduction (which also includes some of the topics
+ we'll discuss in Unit 4 on shell scripting), see 
+\begin_inset CommandInset href
+LatexCommand href
+name "this Software Carpentry tutorial"
+target "https://swcarpentry.github.io/shell-novice"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
