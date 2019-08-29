@@ -134,7 +134,7 @@ URL <- "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_popu
 html <- read_html(URL)
 tbls <- html_table(html_nodes(html, "table"))
 sapply(tbls, nrow)
-pop <- tbls[[2]]
+pop <- tbls[[1]]
 head(pop)
 
 ## @knitr https-pipe
@@ -271,12 +271,12 @@ head(data$loans)
 ## @knitr http-byURL
 
 ## example URL:
-##"http://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=
-##itemCode:526;year:2003,2004,2005,2006,2007&DataMartId=FAO&
-##Format=csv&c=2,3,4,5,6,7&s=countryName:asc"
+## http://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=itemCode:526;
+##year:2012,2013,2014,2015,2016,2017&DataMartId=FAO&Format=csv&c=2,4,5,6,7&
+##s=countryName:asc,elementCode:asc,year:desc
 itemCode <- 526
 baseURL <- "http://data.un.org/Handlers/DownloadHandler.ashx"
-yrs <- paste(as.character(2003:2007), collapse = ",")
+yrs <- paste(as.character(2012:2017), collapse = ",")
 filter <- paste0("?DataFilter=itemCode:", itemCode, ";year:", yrs)
 args1 <- "&DataMartId=FAO&Format=csv&c=2,3,4,5,6,7&"
 args2 <- "s=countryName:asc,elementCode:asc,year:desc"

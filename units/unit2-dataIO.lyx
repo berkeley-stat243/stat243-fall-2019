@@ -1364,8 +1364,30 @@ Reading HTML
 
 \begin_layout Standard
 Let's see a brief example of reading in HTML tables.
- One lesson here is not to write a lot of your own code to do something
- that someone else has probably already written a package for.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that before doing any coding, it can be helpful to look at the raw
+ HTML source code for a given page.
+ We can explore the underlying HTML source in advance of writing our code
+ by looking at the page source directly in the browser (e.g., in Firefox see
+ 
+\family typewriter
+Web Developer -> Page Source
+\family default
+ and in Chrome 
+\family typewriter
+View -> Developer -> View Source
+\family default
+), or by downloading the webpage and looking at it in an editor, although
+ in some cases (such as the nytimes.com case), what we might see is a lot
+ of JavaScript.
+\end_layout
+
+\begin_layout Standard
+One lesson here is not to write a lot of your own code to do something that
+ someone else has probably already written a package for.
  We'll use the 
 \emph on
 rvest
@@ -1540,22 +1562,6 @@ XPath2, eval=FALSE
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-We can explore the underlying HTML source in advance of writing our code
- by looking at the page source directly in the browser (e.g., in Firefox see
- 
-\family typewriter
-Web Developer -> Page Source
-\family default
- and in Chrome 
-\family typewriter
-More tools -> Developer tools
-\family default
-), or by downloading the webpage and looking at it in an editor, although
- in some cases (such as the nytimes.com case), what we might see is a lot
- of JavaScript.
 \end_layout
 
 \begin_layout Subsection
