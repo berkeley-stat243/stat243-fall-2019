@@ -141,19 +141,6 @@ head(pop)
 library(magrittr)
 tbls <- URL %>% read_html("table") %>% html_table()
 
-## @knitr https-old
-## XML package appears to be unmaintained
-library(XML)  
-library(curl)
-URL <- "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-html <- readLines(URL)
-## alternative
-## library(RCurl); html <- getURLContent(URL)
-tbls <- readHTMLTable(html)
-sapply(tbls, nrow)
-pop <- readHTMLTable(html, which = 2)
-head(pop)
-
 ## @knitr htmlLinks
 
 URL <- "http://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year"
@@ -161,15 +148,6 @@ URL <- "http://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year"
 links <- read_html(URL) %>% html_nodes("[href]") %>% html_attr('href')
 ## approach 2: search for HTML 'a' tags
 links <- read_html(URL) %>% html_nodes("a") %>% html_attr('href')
-head(links, n = 10)
-
-## @knitr htmlLinks-old
-URL <- "http://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year"
-html <- readLines(URL)
-links <- getHTMLLinks(html)
-head(links, n = 10)
-
-links <- getHTMLLinks(html, baseURL = URL, relative = FALSE)
 head(links, n = 10)
 
 ## @knitr XPath
@@ -185,22 +163,11 @@ listOfANodes %>% html_attr('href') %>% head(n = 10)
 listOfANodes %>% html_name() %>% head(n = 10)
 listOfANodes %>% html_text()  %>% head(n = 10)
 
-## @knitr XPath-old
-tutorials <- htmlParse("http://statistics.berkeley.edu/computing/training/tutorials")
-listOfANodes <- getNodeSet(tutorials, "//a[@href]")
-head(listOfANodes)
-sapply(listOfANodes, xmlGetAttr, "href")[1:10]
-sapply(listOfANodes, xmlValue)[1:10]
 
 ## @knitr XPath2
 URL <- "https://www.nytimes.com"
 headlines <- read_html(URL) %>% html_nodes("h2") %>% html_text()
 head(headlines)
-
-## @knitr XPath2-old
-doc <- htmlParse(readLines("https://www.nytimes.com"))
-storyDivs <- getNodeSet(doc, "//h2")
-sapply(storyDivs, xmlValue)[1:5]
 
 
 ## @knitr
@@ -230,25 +197,6 @@ xml_find_all(loansNode, '//location//country') %>% xml_text()
 ## or extract the geographic coordinates
 xml_find_all(loansNode, '//location//geo/pairs')
 
-## @knitr xml-old
-doc <- xmlParse("http://api.kivaws.org/v1/loans/newest.xml")
-data <- xmlToList(doc, addAttributes = FALSE)
-names(data)
-length(data$loans)
-data$loans[[2]][c('name', 'activity', 'sector', 'location', 'loan_amount')]
-## let's try to get the loan data into a data frame
-loansNode <- xmlRoot(doc)[["loans"]]
-length(xmlChildren(loansNode))
-loans <- xmlToDataFrame(xmlChildren(loansNode))
-dim(loans)
-head(loans)
-## suppose we only want the country locations of the loans
-countries <- sapply(xmlChildren(loansNode), function(node) 
-   xmlValue(node[['location']][['country']]))
-countries[1:10]
-## this fails because node is not a standard list:
-countries <- sapply(xmlChildren(loansNode), function(node) 
-   xmlValue(node$location$country)) 
 
 
 ## @knitr
@@ -302,14 +250,6 @@ writeBin(content(output2, 'raw'), temp)  ## write out as zip file
 dat <- read.csv(unzip(temp))
 head(dat)
 
-## @knitr http-get2-old
-
-output1 <- getForm(baseURL,
-               DataFilter = paste0("itemCode:", itemCode, ";year:", yrs),
-               DataMartID = "FAO", Format = "csv", c = "2,3,4,5,6,7",
-               s = "countryName:asc,elementCode:asc,year:desc")
-class(output1)
-## not sure how to get output1 into a file
 
 ## @knitr http-post
 if(url.exists('http://www.wormbase.org/db/searches/advanced/dumper')) {
