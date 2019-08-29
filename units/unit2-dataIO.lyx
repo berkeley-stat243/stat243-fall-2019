@@ -346,7 +346,7 @@ At this point, we're going to turn to getting data, reading data in, writing
  The main downside to working with datasets in R (true for Python as well)
  is that the entire dataset resides in memory, so R is not so good for dealing
  with very large datasets.
- More on alternatives in a bit.
+ More on alternatives in a later unit.
  Another common frustration is controlling how the variables are interpreted
  (numeric, character, factor) when reading data into a data frame.
 \end_layout
@@ -481,9 +481,13 @@ In scientific contexts, netCDF (
 ncdf4
 \emph default
  package in R nicely handles working with netCDF files.
- These are examples of a binary format, which is not (easily) human readable
- but can be more space-efficient and faster to work with (because it can
- allow random access into the data rather than requiring sequential reading).
+ These are examples of a 
+\series bold
+binary
+\series default
+ format, which is not (easily) human readable but can be more space-efficient
+ and faster to work with (because it can allow random access into the data
+ rather than requiring sequential reading).
  Binary files store information as sequence of bytes, with the meaning of
  the bytes depending on the specific binary format being used.
  (Recall that a bit is a single value in base 2 (i.e., a 0 or a 1), while
