@@ -886,8 +886,7 @@ testthat
 \end_layout
 
 \begin_layout Standard
-See the materials in Lab 2 on September 10 for more details about assertions
- and testing.
+In Lab 2 on September 10, we'll go over assertions and testing in detail.
 \end_layout
 
 \begin_layout Subsection
@@ -919,11 +918,11 @@ Debugging and recommendations for avoiding bugs
 \end_layout
 
 \begin_layout Standard
-Please see the 
+The 
 \emph on
 R debugging
 \emph default
- tutorial for information on
+ tutorial has information on
 \end_layout
 
 \begin_layout Itemize
@@ -947,7 +946,12 @@ information on how to get help online.
 \end_layout
 
 \begin_layout Standard
-See the materials in Lab 3 on September 17 for more details about debugging.
+In a lab in coming weeks, we'll go over debuggin in detail, so you don't
+ need to look through the 
+\emph on
+R debugging 
+\emph default
+tutorial at this time.
 \end_layout
 
 \begin_layout Section
@@ -1036,7 +1040,8 @@ Some basic strategies
 \end_layout
 
 \begin_layout Itemize
-Have a directory for each project with meaningful subdirectories: e.g., 
+Have a directory for each project with subdirectories with meaningful and
+ standardized names: e.g., 
 \emph on
 code
 \emph default
@@ -1051,7 +1056,8 @@ paper
 
 \begin_layout Itemize
 Keep a document describing your running analysis with dates in a text file
- (i.e., a lab book)
+ (i.e., a lab book).
+ 
 \end_layout
 
 \begin_layout Itemize

@@ -39,11 +39,13 @@ bash shell in class on Friday September 6, so that will be helpful as you work t
 
 - (Required) Tuesday September 3: First section/lab on using Git, setting up your Github repository for problem sets, and using R Markdown/knitr to generate dynamic documents. Please come only to the section you are registered for given space limits in the room, unless you have talked with Chris and have his permission. 
 
-- (Optional) Week of September 2 (or August 30): Help session for installing software, accessing a UNIX-style command line, and basic UNIX usage, date/time/location TBD:
+- (Optional) Wednesday September 4, 4-6 pm in Evans 344: Help session for installing software, accessing a UNIX-style command line, and basic UNIX usage, date/time/location TBD:
 
   - first hour: focus on problems with installation and accessing the UNIX-style command line
   - second hour: focus on general help with using the command line and the material in the UNIX basics tutorial
 
-- (Optional) Week of September 2 (or August 30): two-hour R help session, date/time/location TBD, for those not yet familiar with R at the level of modules 1-5 of the R bootcamp (https://github.com/berkeley-scf/r-bootcamp-2017/archive/master.zip).
+(If you can only come to one hour, just come to that hour, regardless of what kind of help you need.)
+
+- (Optional) Friday September 6, 3-5 pm in Evans 1011: two-hour R help session, date/time/location TBD, for those not yet familiar with R at the level of modules 1-5 of the R bootcamp (https://github.com/berkeley-scf/r-bootcamp-2017/archive/master.zip).
 
 - (Optional) August 29, September 5: [introductory LaTeX sessions](https://berkeley.libcal.com/calendar/workshops) run by the library. In particular I highly recommend (in particular if you are a Statistics graduate student) that you know how to create equations in LaTeX (covered in the September 5 session). 
