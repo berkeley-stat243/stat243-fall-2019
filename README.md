@@ -29,7 +29,7 @@ The `howtos` directory has information on installing and/or getting access to th
 
 ## Submitting assignments
 
-The file https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/howtos/submitting-electronically.txt [UNDER CONSTRUCTION] has information on setting up a Github repository for the class and submitting your assignments by committing your solution to Github. We will discuss this in section on Tuesday September 3.
+The file [submitting-electronically.txt](./howtos/submitting-electronically.txt) has information on setting up a Github repository for the class and submitting your assignments by committing your solution to Github. We will discuss this in section on Tuesday September 3.
 
 ## Online discussion and questions.
 
