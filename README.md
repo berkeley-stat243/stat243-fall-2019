@@ -16,12 +16,14 @@ Please see https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/fir
 Instructor office hours:
 
   - Chris (Evans 495):
-     - TBD
+     - Mondays, 3-4:30 pm
+     - Wednesdays, 3-4 pm 
+     - Thursdays, 10-11 am
      - generally available immediately after class
      - feel free to schedule an appointment or drop by if my door is open
    - Jared:
-     - TBD
      - Tuesday during unused section time, generally 3-4 pm, 5-5:30 pm (Evans 342)
+     - Fridays, 1-2 pm, in one of the 4th floor Evans GSI rooms
 
 ## Software
 
