@@ -23,7 +23,7 @@ Instructor office hours:
      - feel free to schedule an appointment or drop by if my door is open
    - Jared:
      - Tuesday during unused section time, generally 3-4 pm, 5-5:30 pm (Evans 342)
-     - Fridays, 1-2 pm, in one of the 4th floor Evans GSI rooms
+     - Fridays, 1-2 pm (Evans 428)
 
 ## Software
 
