@@ -5,6 +5,17 @@
 ##########################################################
 
 #####################################################
+# 2: Using the bash shell
+#####################################################
+
+## @knitr simple-grep-sed
+
+grep "," file.txt  # look for lines with commas in file.txt
+sed -i 's/,/;/g' file.txt  # replace commas with semicolons in file.txt
+
+## @knitr
+
+#####################################################
 # 3: bash shell examples
 #####################################################
 
@@ -52,10 +63,10 @@ grep --no-filename "^library" *.R | sort | uniq | cut -d'#' -f1 | \
 grep -v "help =" libs.txt > tmp2.txt
 sed 's/;/\n/g' tmp2.txt | sed 's/ //g' |
     sed 's/library(//' | sed 's/)//g' > libs.txt
-## note: on a Mac, use $'s/;/\\\n/g'   -- see https://superuser.com/questions/307165/newlines-in-sed-on-mac-os-x
+## note: on a Mac, use 's/;/\\\n/g'   -- see https://superuser.com/questions/307165/newlines-in-sed-on-mac-os-x
 echo "There are $(wc -l libs.txt | cut -d' ' -f1) \
 unique packages we will install."
-## note: on Linux, wc-l puts the number as the first characters of the output
+## note: on Linux, wc -l puts the number as the first characters of the output
 ## on a Mac, there may be a bunch of spaces preceding the number, so try this:
 ## echo "There are $(wc -l libs.txt | tr -s ' ' | cut -d' ' -f2) \
 ## unique packages we will install."

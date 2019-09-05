@@ -217,6 +217,22 @@ Please see the tutorial on using the bash shell.
 \end_layout
 
 \begin_layout Itemize
+If you don't have access to a remote Unix-based machine (such as one of
+ the SCF machines), then you wouldn't be able to practice with
+\emph on
+ ssh
+\emph default
+ and 
+\emph on
+scp
+\emph default
+ in Section 1.1.
+ That's fine.
+ Just read it over to get the main idea.
+ 
+\end_layout
+
+\begin_layout Itemize
 You can skip Section 1.4.1.
 \end_layout
 
