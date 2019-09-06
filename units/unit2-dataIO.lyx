@@ -2687,6 +2687,14 @@ splashr
  wrapper for R) is another approach.
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+htmlunit
+\emph default
+ is another tool for this.
+\end_layout
+
 \begin_layout Section
 File and string encodings
 \end_layout
