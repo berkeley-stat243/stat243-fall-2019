@@ -25,8 +25,7 @@ the week of September 2.
 
 - (Required) By Monday September 9 at 2 pm, read through this [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash/archive/master.zip). Work through the first 10 problems at the end of the tutorial and submit answers via bCourses as a text file or PDF. This is not a formal problem set, so you don't need to worry about formatting nor about explaining/commenting your answers, nor do you need to put your answers in your Github class repository. In fact it's even fine with me if you hand-write the answers and scan them to an electronic document. I just want to make sure you've worked through the tutorial. 
 
-   You don't need to look at all the sections in the tutorial. Please see
-units/unit4-bash.pdf in the course repository for a list of the
+   You don't need to look at all the sections in the tutorial. Please see Section 2 of units/unit4-bash.pdf in the course repository for a list of the
 sections you can skip over. I'll be doing demonstrations on using the
 bash shell in class on Friday September 6, so that will be helpful as you work through the tutorial. 
 

@@ -1371,8 +1371,16 @@ Let's see a brief example of reading in HTML tables.
 Note that before doing any coding, it can be helpful to look at the raw
  HTML source code for a given page.
  We can explore the underlying HTML source in advance of writing our code
- by looking at the page source directly in the browser (e.g., in Firefox see
- 
+ by looking at the page source directly in the browser (e.g., in Firefox under
+ the 3-lines 
+\begin_inset Quotes eld
+\end_inset
+
+open menu
+\begin_inset Quotes erd
+\end_inset
+
+ symbol, see 
 \family typewriter
 Web Developer -> Page Source
 \family default
@@ -2346,10 +2354,10 @@ resources
 \begin_layout Standard
 Let's see an example of accessing climate model output data from the World
  Bank.
- The API is documented here: 
+ The API is documented by following some links from here: 
 \begin_inset CommandInset href
 LatexCommand href
-target "http://data.worldbank.org/developers/climate-data-api"
+target "http://datahelpdesk.worldbank.org/knowledgebase"
 
 \end_inset
 
