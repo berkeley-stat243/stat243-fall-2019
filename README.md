@@ -16,7 +16,7 @@ Please see https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/fir
 Instructor office hours:
 
   - Chris (Evans 495):
-     - Mondays, 3-4:30 pm
+     - Mondays, 4-5:30 pm
      - Wednesdays, 3-4 pm 
      - Thursdays, 10-11 am
      - generally available immediately after class
