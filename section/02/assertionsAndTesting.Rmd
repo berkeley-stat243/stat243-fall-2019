@@ -18,14 +18,9 @@ suppressPackageStartupMessages(library(testthat))
 * [Package Tutorial](http://r-pkgs.had.co.nz/tests.html)
 * [testthat Paper](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 * [assertthat github](https://github.com/hadley/assertthat)
+* [Package Example](https://github.com/kbroman/broman)
 
 ## Assertion vs. Testing
-
-> ### Learning Objectives
->
-> - Benefits of Assertions
-> - Introduction to the R package "assertthat"
-> - Write simple functions and their uassertions
 
 One uses assertions to check inputs and the state of the program during execution, while tests check that a function behaves as expected given a set of inputs (including checking that the assertions work and that what should be errors are indeed errors).
 
@@ -42,6 +37,11 @@ Tests and Assertions are different in that,
   - Tests only test a small number of cases. Assertions work with live data, which can be more varied and more realistic. They purport to cover infinitely many cases; they establish universal truths rather then point truths.
 
 ## Assertions and `"assertthat"`
+
+> ### Learning Objectives
+> - Benefits of Assertions
+> - Introduction to the R package "assertthat"
+> - Write simple functions and their assertions
 
 assertthat provides a drop in replacement for `stopifnot()` that makes it easy to check the pre- and post-conditions of a function, while producing useful error messages.
 ```{r, error=TRUE}
@@ -119,7 +119,6 @@ assert_that(is_odd(1:2))
 ## Testing and `"testthat"`
 
 > ### Learning Objectives
->
 > - Benefits of Unit Tests
 > - Introduction to the R package "testthat"
 > - Write simple functions and their unit tests
