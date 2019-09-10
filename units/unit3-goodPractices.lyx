@@ -1166,5 +1166,17 @@ Using make for workflows
  for more details.
 \end_layout
 
+\begin_layout Enumerate
+You might organize your workflow as an R package as described in 
+\begin_inset CommandInset href
+LatexCommand href
+name "this article"
+target "https://doi.org/10.1080/00031305.2017.1375986"
+
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document

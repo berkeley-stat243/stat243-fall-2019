@@ -265,6 +265,7 @@ if(url.exists('http://www.wormbase.org/db/searches/advanced/dumper')) {
               DNA ="flanking sequences only",
               .cgifields = paste(c("feature", "orientation", "DNA",
                                    "dump","relative"), collapse=", "))
+}
 
 ## @knitr
 
