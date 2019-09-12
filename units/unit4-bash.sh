@@ -93,3 +93,38 @@ ps -o pid,pcpu,pmem,user,command | grep exec/R
 # not clear how to sort by start time
 ps -o pid,command | grep exec/R | cut -d' ' -f1 |  tail -n ${nJobs} | xargs kill
 
+
+grep bash unit4-bash.sh
+
+grep -c bash unit4-bash.sh
+
+num=$(grep -c bash unit4-bash.sh)
+echo "There are ${num} occurrences of the word 'bash' in this file."
+
+echo There are $(grep -c bash unit4-bash.sh) occurrences of the word 'bash' in this file.
+
+# For Belgium, determine the minimum unemployment value (field #6) in cpds.csv in a pro- grammatic way.
+
+grep Belgium cpds.csv | cut -d',' -f6  | sort -n 
+
+# Have what is printed out to the screen look like “Belgium 6.2”.
+
+# Now store the unique values of the countries in a variable, first stripping out the quotation marks and removing the space in “New Zealand”, which causes problems because of the space in its name.
+
+countries=$(cut -d',' -f2 cpds.csv | tail -n +2 | sort -u | sed 's/"//g') 
+
+# Figure out how to automate step 1 to do the calculation for all the countries and print to the screen.
+
+for c in ${countries}; do
+    echo ${c} $(grep ${c} cpds.csv | cut -d',' -f6  | sort -n | head -n +2)
+done
+
+# First, take the fourth column. Figure out the unique values in that column.
+# Next, automate the process of determining if any of the values are non-numeric so that you don’t have to scan through all of the unique values looking for non-numbers. You’ll need to look for the following regular expression pattern “[^0-9]”, which is interpreted as NOT any of the numbers 0 through 9.
+
+cut -d',' -f4 RTADataSub.csv | sort | uniq 
+
+nfields=60
+for (( i=2; i <= ${nfields}; i++ )); do
+    echo "field number $i $(cut -d',' -f${i} RTADataSub.csv | sort | uniq)"
+    done
