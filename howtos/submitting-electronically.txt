@@ -16,29 +16,10 @@ Do not change the repository settings! They are setup for this class.
 
 3. Clone the repo to your home directory (I would clone it into a directory
 just for repositories (e.g., I use `~/repos`). In the top-level of your working
-directory, you need to create 2 files named (exactly) `info.json` and `.gitignore` 
+directory, you should create a file named (exactly)`.gitignore` 
 without the quotes. 
 
-3a) info.json
-In this file, you need to set the following variables (no dashes, keep brackets):
-
--------------------------
-{
-	"name": "Jared Bennett",
-	"SID": "8675309",
-	"email": "jared_bennett@berkeley.edu",
-	"github_name": "GilChrist19",
-	"status": "enrolled"
-}
--------------------------
-
-The variable names (name, SID, email, github_name) have to be exactly as specified
-above. i.e. Only change the items in the quotation marks.  
-An example `info.json` file can be found in this directory.
-Your status should be one of `"enrolled"`, `"waitlist"`, or `"audit"`.
-
-3b) .gitignore
-This file ignores transient or computer specific files that R/RStudio generates.
+The .gitignore file causes Git to ignore transient or computer-specific files that R/RStudio generates.
 (more info at https://github.com/github/gitignore)
 In it, put (again, don't put dashed lines):
 
@@ -89,7 +70,7 @@ When we pull from your repository, our code will be assuming the following struc
 your_repo/
 ├── ps1/
 │   ├── ps1.pdf
-│   ├── ps1.rnw (.rmd, .lyx, .tex, .r)
+│   ├── ps1.rmd (.rtex, .rnw, .lyx, .tex, .r)
 ├── ps2/
 │   ├── ...
 ├── ...
