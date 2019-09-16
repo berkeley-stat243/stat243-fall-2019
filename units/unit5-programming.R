@@ -135,6 +135,9 @@ cat("My Windows path is: C:\\Users\\My Documents.")
 ### 4.1 Types and classes
                                            
 ## @knitr typeof
+devs <- rnorm(5)
+class(devs)
+typeof(devs)
 a <- data.frame(x = 1:2)
 class(a)
 typeof(a)
