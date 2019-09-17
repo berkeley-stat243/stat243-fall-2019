@@ -166,15 +166,19 @@ typeof(bart$firstname)
 
 ## @knitr attr1
 x <- rnorm(10 * 365)
+attributes(x)
 qs <- quantile(x, c(.025, .975))
+attributes(qs)
 qs
 qs[1] + 3
+
+object.size(qs)
 
 
 ## @knitr attr2
 names(qs) <- NULL
 qs
-
+object.size(qs)
 
 ## @knitr attr3
 row.names(mtcars)[1:6]
