@@ -1503,7 +1503,7 @@ Objects in general have a type, which relates to what kind of values are
 \end_layout
 
 \begin_layout Standard
-Let's look at Adler's Table 7.1 to see some other types.
+You can look at Table 7.1 in the Adler book to see some other types.
  
 \end_layout
 
@@ -1555,7 +1555,8 @@ lm
 \end_layout
 
 \begin_layout Standard
-We can create objects with our own defined class.
+We can create objects with our own defined class (an S3 class in this simple
+ example - we'll discuss S3 classes in Section 4.4.1).
 \end_layout
 
 \begin_layout Standard
@@ -1977,7 +1978,8 @@ Popular languages that use OOP include C++, Java, and Python.
 
 \begin_layout Standard
 The idea of OOP is that all operations are built around objects, which have
- a class, and methods that operate on objects in the class.
+ a class, and methods (i.e., class-specific functions) that operate on objects
+ in the class.
  Classes are constructed to build on (inherit from) each other, so that
  one class may be a specialized form of another class, extending the components
  and methods of the simpler class (e.g., 
@@ -2363,6 +2365,26 @@ class-specific
 
 \end_layout
 
+\begin_layout Paragraph
+The print method
+\end_layout
+
+\begin_layout Standard
+Like 
+\emph on
+summary()
+\emph default
+, 
+\emph on
+print()
+\emph default
+ is a generic method, with various class-specific methods, such as 
+\emph on
+print.lm()
+\emph default
+.
+\end_layout
+
 \begin_layout Standard
 Note that the 
 \emph on
@@ -2694,9 +2716,8 @@ Hint: if you type 'q', what function is R going to use? point of confusion
 \begin_layout Standard
 What we've just discussed are the old-style R (and S) object orientation,
  called S3 methods.
- The new style is called S4 and we'll discuss it next.
- S3 is still commonly used, in part because S4 can be slow (or at least
- it was when I last looked into this a few years ago).
+ An old, but somewhat newer style is called S4 and we'll discuss it next.
+ S3 is still commonly used, in part because S4 can be slow.
  S4 is more structured than S3.
  
 \end_layout
