@@ -145,7 +145,7 @@ status open
 \begin_layout Plain Layout
 * print.q didn't work well - perhaps partly because confusion about q vs
  q() partially resolvable by saying I want to run quit() by just typing
- q 
+ q; even better by typing 'k' 
 \end_layout
 
 \end_inset
@@ -2691,11 +2691,7 @@ weekdays()
 Challenge
 \series default
 : how would you get R to quit immediately, without asking for any more informati
-on, when you simply type '
-\emph on
-q
-\emph default
-' (no parentheses!) instead of '
+on, when you simply type 'k' (no parentheses!) instead of '
 \emph on
 quit()
 \emph default
@@ -3427,7 +3423,7 @@ data$country
 \family typewriter
 data$unemp
 \family default
- and without using 
+ and without using quotes around the variable names, as in 
 \family typewriter
 
 \begin_inset Quotes eld
@@ -3452,7 +3448,19 @@ unemp
 
 \family default
 .
- 
+ Referring directly to the variables in the data frame is not standard R
+ usage, hence the term 
+\begin_inset Quotes eld
+\end_inset
+
+non-standard evaluation
+\begin_inset Quotes erd
+\end_inset
+
+.
+ One reason it is not standard is that country and unemp are not themselves
+ independent R variables so R can't find them in the usual way (see Section
+ 6.9).
 \end_layout
 
 \begin_layout Standard
@@ -3488,10 +3496,9 @@ This 'magic' is done by capturing the code expression you write and evaluating
 
 \begin_layout Standard
 While this has benefits, this so-called non-standard evaluation makes it
- harder to program functions in the usual way.
- (For some reason the error messages from running the following chunk are
- not being printed in the PDF, but you can see them by running the code
- yourself.)
+ harder to program functions in the usual way, as illustrated in the following
+ code chunk, where neither attempt to use the function works.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3532,7 +3539,11 @@ target "https://dplyr.tidyverse.org/articles/programming.html"
 \begin_layout Standard
 Note that the tidyverse is not the only place where non-standard evaluation
  is used.
- Consider this lm() call:
+ Consider this 
+\emph on
+lm()
+\emph default
+ call:
 \end_layout
 
 \begin_layout Standard
@@ -3556,6 +3567,10 @@ lm-nse, eval=FALSE
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Where is the non-standard evaluation there?
 \end_layout
 
 \begin_layout Section
@@ -3594,6 +3609,7 @@ Functions as objects
 
 \begin_layout Standard
 Everything in R is an object, including functions.
+ Perhaps unexpectedly, one can have a non-function 
 \end_layout
 
 \begin_layout Standard
@@ -3648,7 +3664,7 @@ eval-fun
 \end_layout
 
 \begin_layout Standard
-We can also pass a function into another function either as the actual function
+We can also pass a function into another function as the actual function
  object.
  This is one aspect of R being a functional programming language.
 \end_layout
@@ -3899,6 +3915,42 @@ args
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Sometimes it can be hard to tell what arguments are required.
+ Consider this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+args-req
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Challenge
+\series default
+: figure out where the final error actually occurs.
 \end_layout
 
 \begin_layout Standard
