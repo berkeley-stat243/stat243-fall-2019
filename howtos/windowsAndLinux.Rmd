@@ -114,8 +114,31 @@ So, the final path to find your home directory from windows will look like:
 `%userprofile%\AppData\Local\Packages\<Distro-Folder>\LocalStat\rootfs\home\<your-user-name>\`
 
 
+## Installing Rstudio on Linux Subsystem
 
+The Linux Subsystem behaves exactly like a regular Linux installation, but for 
+completeness, I will provide instructions here for people new to Linux. These 
+instructions are written from the perspective of Ubuntu, but will be similar for 
+other repos.
 
+* [Rstudio](https://www.rstudio.com/products/rstudio/download/#download)
+* [Source](https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt)
+
+1. Go the the Rstudio website (link above) and download the appropriate Rstudio 
+Desktop version.
+    * For most people, this is the `Ubuntu 18 (64-bit)` installer.
+    * Save it somewhere that you can find it.
+    * You should have a file similar to `rstudio-<version number>-amd64.deb`
+2. Open a terminal window and navigate to wherever you saved the rstudio install file.
+3. Type the command `sudo dpkg -i ./rstudio-<version number>-amd64.deb`
+    * This tells the package installer (`dpkg`) to install (`-i`) the file specified (`./thing.deb`)
+4. Type the command `sudo apt-get install -f`
+    * This tells the package manager (`apt-get`) to fix (`-f`) any dependency issues that 
+    may have arisen when installing the package.
+5. Type the command `which rstudio` to make sure the system can find it.
+    * Output should be similar to `/usr/bin/rstudio`
+6. Run rstudio from linux by typing `rstudio &`
+    * The `&` runs it in the background, allowing you to close the terminal window.
 
 
 
