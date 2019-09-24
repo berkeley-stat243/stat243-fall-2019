@@ -3954,6 +3954,34 @@ Challenge
 \end_layout
 
 \begin_layout Standard
+That said, R will error out if it is expecting an argument, rather than
+ looking for that argument elsewhere.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+args-req2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Functions may have unspecified arguments, which are designated using '...'.
  Unspecified arguments occurring at the beginning of the argument list are
  generally a collection of like objects that will be manipulated (consider
@@ -5109,7 +5137,7 @@ status open
 \begin_layout Standard
 When calling C or C++ from R, one (implicitly) passes pointers to the vectors
  into C.
- Let's see an example:
+ For example, using the old .C syntax, here's an example:
 \end_layout
 
 \begin_layout Standard
@@ -5229,6 +5257,30 @@ In C, the function definition looks like this:
 void logLik(double* out, double* theta)
 \end_layout
 
+\begin_layout Paragraph*
+Pointers in R?
+\end_layout
+
+\begin_layout Standard
+Are there pointers in R? From a user perspective, one might say 'no', because
+ an R programmer can't use pointers explicitly.
+ But pointer-like behavior is occurring behind the scenes in lots of ways:
+\end_layout
+
+\begin_layout Itemize
+Lists in R are essentially vectors of pointers to the elements of the list
+\end_layout
+
+\begin_layout Itemize
+Character vectors in R are essentially pointers to the individual character
+ strings.
+\end_layout
+
+\begin_layout Itemize
+Environments (see Section 6.11) behave like pointers and are passed by reference
+ rather than by copy.
+\end_layout
+
 \begin_layout Subsubsection
 Promises and lazy evaluation
 \end_layout
@@ -5333,6 +5385,15 @@ lazy-eval2
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Lazy evaluation is not just an R thing.
+ It also occurs in Spark and in the Python Dask package.
+ The basic idea is to delay executation until it's really needed, with the
+ goal that if one does so, the system may be able to better optimize a series
+ of multiple steps as a joint operation relative to executing them one by
+ one.
 \end_layout
 
 \begin_layout Paragraph
@@ -6704,8 +6765,8 @@ We can byte compile our own functions using
 cmpfun()
 \emph default
 .
- Here's an example (silly since we we actually do this calculation using
- vectorized operations):
+ Here's an example (silly since as experienced R programmers, we would use
+ vectorized calculation here rather than this unvectorized code.)
 \end_layout
 
 \begin_layout Standard
@@ -6755,8 +6816,7 @@ loadcmp()
 \begin_layout Standard
 Unfortunately, in my experience, byte compiling doesn't usually speed things
  up much.
- As experienced R programmers we would never write the unvectorized code
- above.
+ 
 \end_layout
 
 \begin_layout Subsection

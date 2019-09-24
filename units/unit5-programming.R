@@ -657,6 +657,16 @@ sum()
 print(quantile)
 quantile()
 
+## @knitr args-req2
+
+x <- 1
+y <- 2
+myfun <- function(x) {
+    print(y)
+    print(x)
+}
+myfun()
+
 ## @knitr dots
 pplot <- function(x, y, pch = 16, cex = 0.4, ...) {
 	plot(x, y, pch = pch, cex = cex, ...)
@@ -865,6 +875,9 @@ f <- function(a, b = d) {
 	d <- log(a); 
 	return(a*b)
 }
+f(7)
+
+d <- 100
 f(7)
                                            
 
