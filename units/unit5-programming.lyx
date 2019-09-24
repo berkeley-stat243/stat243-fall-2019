@@ -145,7 +145,7 @@ status open
 \begin_layout Plain Layout
 * print.q didn't work well - perhaps partly because confusion about q vs
  q() partially resolvable by saying I want to run quit() by just typing
- q 
+ q; even better by typing 'k' 
 \end_layout
 
 \end_inset
@@ -1503,7 +1503,7 @@ Objects in general have a type, which relates to what kind of values are
 \end_layout
 
 \begin_layout Standard
-Let's look at Adler's Table 7.1 to see some other types.
+You can look at Table 7.1 in the Adler book to see some other types.
  
 \end_layout
 
@@ -1555,7 +1555,8 @@ lm
 \end_layout
 
 \begin_layout Standard
-We can create objects with our own defined class.
+We can create objects with our own defined class (an S3 class in this simple
+ example - we'll discuss S3 classes in Section 4.4.1).
 \end_layout
 
 \begin_layout Standard
@@ -1977,7 +1978,8 @@ Popular languages that use OOP include C++, Java, and Python.
 
 \begin_layout Standard
 The idea of OOP is that all operations are built around objects, which have
- a class, and methods that operate on objects in the class.
+ a class, and methods (i.e., class-specific functions) that operate on objects
+ in the class.
  Classes are constructed to build on (inherit from) each other, so that
  one class may be a specialized form of another class, extending the components
  and methods of the simpler class (e.g., 
@@ -2363,6 +2365,26 @@ class-specific
 
 \end_layout
 
+\begin_layout Paragraph
+The print method
+\end_layout
+
+\begin_layout Standard
+Like 
+\emph on
+summary()
+\emph default
+, 
+\emph on
+print()
+\emph default
+ is a generic method, with various class-specific methods, such as 
+\emph on
+print.lm()
+\emph default
+.
+\end_layout
+
 \begin_layout Standard
 Note that the 
 \emph on
@@ -2669,11 +2691,7 @@ weekdays()
 Challenge
 \series default
 : how would you get R to quit immediately, without asking for any more informati
-on, when you simply type '
-\emph on
-q
-\emph default
-' (no parentheses!) instead of '
+on, when you simply type 'k' (no parentheses!) instead of '
 \emph on
 quit()
 \emph default
@@ -2694,9 +2712,8 @@ Hint: if you type 'q', what function is R going to use? point of confusion
 \begin_layout Standard
 What we've just discussed are the old-style R (and S) object orientation,
  called S3 methods.
- The new style is called S4 and we'll discuss it next.
- S3 is still commonly used, in part because S4 can be slow (or at least
- it was when I last looked into this a few years ago).
+ An old, but somewhat newer style is called S4 and we'll discuss it next.
+ S3 is still commonly used, in part because S4 can be slow.
  S4 is more structured than S3.
  
 \end_layout
@@ -3406,7 +3423,7 @@ data$country
 \family typewriter
 data$unemp
 \family default
- and without using 
+ and without using quotes around the variable names, as in 
 \family typewriter
 
 \begin_inset Quotes eld
@@ -3431,7 +3448,19 @@ unemp
 
 \family default
 .
- 
+ Referring directly to the variables in the data frame is not standard R
+ usage, hence the term 
+\begin_inset Quotes eld
+\end_inset
+
+non-standard evaluation
+\begin_inset Quotes erd
+\end_inset
+
+.
+ One reason it is not standard is that country and unemp are not themselves
+ independent R variables so R can't find them in the usual way (see Section
+ 6.9).
 \end_layout
 
 \begin_layout Standard
@@ -3467,10 +3496,9 @@ This 'magic' is done by capturing the code expression you write and evaluating
 
 \begin_layout Standard
 While this has benefits, this so-called non-standard evaluation makes it
- harder to program functions in the usual way.
- (For some reason the error messages from running the following chunk are
- not being printed in the PDF, but you can see them by running the code
- yourself.)
+ harder to program functions in the usual way, as illustrated in the following
+ code chunk, where neither attempt to use the function works.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3511,7 +3539,11 @@ target "https://dplyr.tidyverse.org/articles/programming.html"
 \begin_layout Standard
 Note that the tidyverse is not the only place where non-standard evaluation
  is used.
- Consider this lm() call:
+ Consider this 
+\emph on
+lm()
+\emph default
+ call:
 \end_layout
 
 \begin_layout Standard
@@ -3535,6 +3567,10 @@ lm-nse, eval=FALSE
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Where is the non-standard evaluation there?
 \end_layout
 
 \begin_layout Section
@@ -3573,6 +3609,7 @@ Functions as objects
 
 \begin_layout Standard
 Everything in R is an object, including functions.
+ Perhaps unexpectedly, one can have a non-function 
 \end_layout
 
 \begin_layout Standard
@@ -3627,7 +3664,7 @@ eval-fun
 \end_layout
 
 \begin_layout Standard
-We can also pass a function into another function either as the actual function
+We can also pass a function into another function as the actual function
  object.
  This is one aspect of R being a functional programming language.
 \end_layout
@@ -3868,6 +3905,70 @@ status open
 
 \begin_layout Plain Layout
 args
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sometimes it can be hard to tell what arguments are required.
+ Consider this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+args-req
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Challenge
+\series default
+: figure out where the final error actually occurs.
+\end_layout
+
+\begin_layout Standard
+That said, R will error out if it is expecting an argument, rather than
+ looking for that argument elsewhere.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+args-req2
 \end_layout
 
 \end_inset
@@ -5036,7 +5137,7 @@ status open
 \begin_layout Standard
 When calling C or C++ from R, one (implicitly) passes pointers to the vectors
  into C.
- Let's see an example:
+ For example, using the old .C syntax, here's an example:
 \end_layout
 
 \begin_layout Standard
@@ -5156,6 +5257,30 @@ In C, the function definition looks like this:
 void logLik(double* out, double* theta)
 \end_layout
 
+\begin_layout Paragraph*
+Pointers in R?
+\end_layout
+
+\begin_layout Standard
+Are there pointers in R? From a user perspective, one might say 'no', because
+ an R programmer can't use pointers explicitly.
+ But pointer-like behavior is occurring behind the scenes in lots of ways:
+\end_layout
+
+\begin_layout Itemize
+Lists in R are essentially vectors of pointers to the elements of the list
+\end_layout
+
+\begin_layout Itemize
+Character vectors in R are essentially pointers to the individual character
+ strings.
+\end_layout
+
+\begin_layout Itemize
+Environments (see Section 6.11) behave like pointers and are passed by reference
+ rather than by copy.
+\end_layout
+
 \begin_layout Subsubsection
 Promises and lazy evaluation
 \end_layout
@@ -5260,6 +5385,15 @@ lazy-eval2
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Lazy evaluation is not just an R thing.
+ It also occurs in Spark and in the Python Dask package.
+ The basic idea is to delay executation until it's really needed, with the
+ goal that if one does so, the system may be able to better optimize a series
+ of multiple steps as a joint operation relative to executing them one by
+ one.
 \end_layout
 
 \begin_layout Paragraph
@@ -6631,8 +6765,8 @@ We can byte compile our own functions using
 cmpfun()
 \emph default
 .
- Here's an example (silly since we we actually do this calculation using
- vectorized operations):
+ Here's an example (silly since as experienced R programmers, we would use
+ vectorized calculation here rather than this unvectorized code.)
 \end_layout
 
 \begin_layout Standard
@@ -6682,8 +6816,7 @@ loadcmp()
 \begin_layout Standard
 Unfortunately, in my experience, byte compiling doesn't usually speed things
  up much.
- As experienced R programmers we would never write the unvectorized code
- above.
+ 
 \end_layout
 
 \begin_layout Subsection

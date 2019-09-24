@@ -166,15 +166,19 @@ typeof(bart$firstname)
 
 ## @knitr attr1
 x <- rnorm(10 * 365)
+attributes(x)
 qs <- quantile(x, c(.025, .975))
+attributes(qs)
 qs
 qs[1] + 3
+
+object.size(qs)
 
 
 ## @knitr attr2
 names(qs) <- NULL
 qs
-
+object.size(qs)
 
 ## @knitr attr3
 row.names(mtcars)[1:6]
@@ -582,6 +586,8 @@ lm(y ~ x, weights = w, data = mydf)
 
 ## @knitr function-object
 x <- 3
+class(x); typeof(x)
+
 x(2)
 x <- function(z) z^2
 x(2)
@@ -601,6 +607,9 @@ f <- function(fxn, x) {
 }
 f(mean, x)
 
+## lapply/sapply operate similarly
+sapply(x, abs)
+
 ## @knitr match-fun
 f <- function(fxn, x){
 	match.fun(fxn)(x) 
@@ -612,7 +621,11 @@ f(mean, x)
 
 ## @knitr fun-parts
 f1 <- function(x) y <- x^2
-f2 <- function(x) {y <- x^2; z <- x^3; return(list(y, z))}
+f2 <- function(x) {
+    y <- x^2
+    z <- x^3
+    return(list(y, z))
+}
 class(f1)
 body(f2)
 typeof(body(f1)); class(body(f1))
@@ -637,7 +650,22 @@ do.call(mean, list(1:10, na.rm = TRUE))
 
 ## @knitr args
 args(lm)
-                                      
+
+## @knitr args-req
+print(sum)
+sum()
+print(quantile)
+quantile()
+
+## @knitr args-req2
+
+x <- 1
+y <- 2
+myfun <- function(x) {
+    print(y)
+    print(x)
+}
+myfun()
 
 ## @knitr dots
 pplot <- function(x, y, pch = 16, cex = 0.4, ...) {
@@ -685,8 +713,8 @@ match.call(definition = mean,
 
 ## @knitr return
 f <- function(x) { 
-	if(x < 0) {
-     return(-x^2)
+    if(x < 0) {
+        return(-x^2)
     } else res <- x^2
 }
 f(-3)
@@ -847,6 +875,9 @@ f <- function(a, b = d) {
 	d <- log(a); 
 	return(a*b)
 }
+f(7)
+
+d <- 100
 f(7)
                                            
 

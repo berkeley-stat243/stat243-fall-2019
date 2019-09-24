@@ -39,7 +39,7 @@ eg.
     # variable defined in .Global
     x <- 1:10
     
-    myFunc <- function(x){
+    myFunc <- function(){
       # variable defined in myFunc
       y <- 1:10
       
@@ -47,7 +47,7 @@ eg.
       return(x + y)
     }
     
-    myFunc(x = x)
+    myFunc()
     ```
 This occurs again when using `<-` vs `<<-`.  
 (Potentially interesting [SO](https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r) discussion.)
