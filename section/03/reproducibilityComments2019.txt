@@ -1,0 +1,25 @@
+Scientific/algorithmic complexity vs code complexity and how they pertain to 
+human understanding of code.
+
+Can code be self-explanatory?
+    At what level? (ie, expert vs noob)
+    Does it depend on field of expertise? (ie, biologist vs statistician)
+
+Open-source vs proprietary software?
+    What about reliability?
+    Cost of experiments. (mice are expensive)
+    What is several pieces of software are used?
+
+When do you start using best practices on a project?
+    What if the code will only be used internally?
+    What if it grows beyond what you imagined later?
+    How to balance time/money on development vs documentation?
+
+Who is responsible for ensuring reproducibility or replicability?
+    The journal/editors?
+    The community?
+    How are authors encouraged to adhere to standards?
+    Where is data stored? With the paper? The journal? The authors?
+
+
+
