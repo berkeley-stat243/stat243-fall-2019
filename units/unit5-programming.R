@@ -948,7 +948,9 @@ f() # what will happen?
 y <- 100
 f <- function(){
 	y <- 10
-	g <- function(x) x + y
+	g <- function(x) {
+            return(x + y + rnorm(1))
+        }
 	return(g)
 }
 ## you can think of f() as a function constructor
