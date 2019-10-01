@@ -1185,7 +1185,7 @@ logLik <- function(k, n, p, phi) {
 
 
 
-## @knitr challenge8
+## @knitr challenge7
 
 PIKK <- function(n, k) {
     ## return indices of the sample of size k
@@ -1203,7 +1203,7 @@ FYKD <- function(n, k) {
     return(indices[1:k])
 }
 
-## @knitr challenge9
+## @knitr challenge8
 
 n <- 100000
 p <- 5  ## number of categories
@@ -1216,7 +1216,10 @@ smp <- rep(0, n)
 
 ## loop by row and use sample()
 set.seed(1)
-system.time(for(i in seq_len(n)) smp[i] <- sample(p, 1, prob = probs[i, ]))
+system.time(
+    for(i in seq_len(n))
+        smp[i] <- sample(p, 1, prob = probs[i, ])
+)
 
                   
 ## @knitr                  
