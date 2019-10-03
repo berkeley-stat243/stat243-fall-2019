@@ -6930,7 +6930,7 @@ Challenge 2
  Suppose you have 
 \begin_inset Formula 
 \[
-y_{i}\sim\mathcal{N}(\sum_{k=1}^{m_{i}}w_{i,k}\mu_{ID[i,k]},\sigma^{2})
+y_{i}\sim\mathcal{N}(\sum_{j=1}^{m_{i}}w_{i,j}\mu_{ID[i,j]},\sigma^{2})
 \]
 
 \end_inset
@@ -6941,7 +6941,7 @@ for a large number of observations,
 
 .
  I give you a vector of 
-\begin_inset Formula $\mu$
+\begin_inset Formula $\mu=(\mu_{1},\ldots,\mu_{K})$
 \end_inset
 
  values and a ragged list of weights (i.e., the number of weights varies by
@@ -6952,7 +6952,7 @@ for a large number of observations,
 
  varies by observation).
  Figure out how to calculate the vector of means, 
-\begin_inset Formula $\sum_{k}w_{i,k}\mu_{ID[i,k]}$
+\begin_inset Formula $\sum_{j}w_{i,j}\mu_{ID[i,j]}$
 \end_inset
 
  as fast as possible.
