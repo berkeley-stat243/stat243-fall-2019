@@ -1,7 +1,7 @@
 myData <- read.csv('./data.csv')
 
-logitBoot <- function(y, x, nBoot = 500) {
-  set.seed(1)
+logitBoot <- function(y, x, nBoot = 2000) {
+  set.seed(5)
   out <- sapply(seq_len(nBoot), myglm, y, x)
   boot_se <- sd(out)
   return(boot_se)
