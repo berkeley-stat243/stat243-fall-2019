@@ -7338,7 +7338,7 @@ rm()
  does not actually free up memory, it just disassociates the name from the
  memory used to store the object.
  In general R will clean up such objects without a reference (i.e., a name)
- but you may need to call 
+ but occasionally you may need to call 
 \emph on
 gc()
 \emph default
@@ -7385,7 +7385,7 @@ Ncells
 Vcells
 \emph default
 .
- As far as I know, 
+ 
 \emph on
 Ncells
 \emph default
@@ -7526,7 +7526,8 @@ ls-sizes
 \end_layout
 
 \begin_layout Standard
-Unfortunately with environments, ReferenceClasses, and other such 
+Unfortunately with environments, R6 and ReferenceClasses, and other such
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -7733,8 +7734,6 @@ n
 , but rather is represented by the first and last value in the sequence.
  However, some of the functions we use to determine object size don't give
  us the right answer in this case.
- I haven't run this when generating this document as my current machine
- is still using R 3.4.3.
 \end_layout
 
 \begin_layout Standard
@@ -7747,7 +7746,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-sequences, eval=FALSE
+sequences
 \end_layout
 
 \end_inset
@@ -8529,8 +8528,7 @@ So R doesn’t copy all the time.
 \begin_inset Quotes erd
 \end_inset
 
- I believe some improvements have been made in recent versions of R in this
- regard.
+ I believe improvements have been made in recent versions of R in this regard.
 \end_layout
 
 \begin_layout Standard
@@ -8702,7 +8700,7 @@ You can explore this using
 
 \begin_layout Standard
 R is also clever about saving copying when it works with character strings.
- We might explore this in a problem set problem.
+ Character vectors are handled in a similar way as lists.
 \end_layout
 
 \begin_layout Subsection

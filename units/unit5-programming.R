@@ -1268,12 +1268,6 @@ ls.sizes <- function(howMany = 10, minSize = 1){
 
 ## @knitr serialize
 
-## size of an environment
-e <- new.env()
-e$x <- rnorm(1e7)
-object.size(e)
-object_size(e)
-length(serialize(e, NULL))
 
 ## size of a closure
 x <- rnorm(1e7)
@@ -1290,6 +1284,12 @@ length(serialize(myFun, NULL))
 ## note that our discussion of copy-on-change will tell us
 ## why the 80 MB vs. 160 MB disagreement occurs
 
+## size of an environment
+e <- new.env()
+e$x <- rnorm(1e7)
+object.size(e)
+object_size(e)
+length(serialize(e, NULL))
 
 ## @knitr inspect
 x <- rnorm(5)
@@ -1319,9 +1319,7 @@ length(serialize(tmp, NULL)) # expands the object out
 
 ## @knitr hidden3, eval=FALSE
 x <- rnorm(1e7)
-gc()
 y <- x[1:(length(x) - 1)]
-gc()
 
 
 ## @knitr
