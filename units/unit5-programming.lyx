@@ -8204,12 +8204,28 @@ Passing objects to compiled code
 \end_layout
 
 \begin_layout Standard
+This subsection is out-of-date and doesn't reflect that most people these
+ days use the 
+\emph on
+Rcpp
+\emph default
+ package rather than the older .C and .Call interfaces to compiled code.
+ We won't cover this subsection in class and don't expect you to know this
+ material.
+ However, if you do end up interfacing to external code, thinking about
+ whether copies are made when calling out to external code can be important
+ if you're working with large objects.
+\end_layout
+
+\begin_layout Standard
 As we've already discussed, when R objects are passed to compiled code (e.g.,
  C or C++), they are passed as pointers and the compiled code uses the memory
  allocated by R (though it could also allocate additional memory if allocation
  is part of the code).
  However, a copy of the object is made, so when calling a C function from
  R there is some memory overhead.
+ (However, Jared commented to me that in Rcpp, one can pass by reference
+ and avoid having copies made.)
 \end_layout
 
 \begin_layout Standard
