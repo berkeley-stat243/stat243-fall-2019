@@ -8548,6 +8548,18 @@ So R doesn’t copy all the time.
 \end_layout
 
 \begin_layout Standard
+You can view the NAMED count either via 
+\emph on
+.Internal(inspect())
+\emph default
+ or by using 
+\emph on
+pryr::refs()
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
 Here are examples of how the NAMED count can be fooled into making a copy
  unnecessarily.
  Why do I say these copies are unnecessary and why is NAMED fooled?
@@ -8759,9 +8771,11 @@ Example
 \begin_layout Standard
 Let's work through a real example where we keep a running tally of current
  memory in use and maximum memory used in a function call.
- We'll want to consider hidden uses of memory, passing objects to compiled
- code, and lazy evaluation.
- This code is courtesy of Yuval Benjamini.
+ We'll want to consider hidden uses of memory, when copies are made, and
+ lazy evaluation.
+ (In a real example we'd also want to think about when copies are made in
+ calling compiled code, but we don't do that in class.) This code is courtesy
+ of Yuval Benjamini.
  For our purposes here, let's assume that 
 \emph on
 xvar
