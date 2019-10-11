@@ -358,7 +358,6 @@ math.cosh       math.frexp      math.modf
 
 
 
-
 **Exercises**
 
 - Using the section on "Built-in Types" from the [official "The Python
@@ -366,7 +365,8 @@ Standard Library" reference](https://docs.python.org/3/library/index.html), figu
     1.  $(\lceil \frac{3}{4} \rceil \times 4)^3$, 
     and
     2.  $\sqrt{-1}$.
-```
+
+
 
 Objects and object-oriented programming
 ---------------------------------------
