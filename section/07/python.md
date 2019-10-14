@@ -10,7 +10,7 @@ Background
 Preparation
 ---------------
 
-This tutorial assumes you are familiar with R (or possibly another high-level language such as MATLAB). 
+This tutorial assumes you are familiar with R.
 
 You will also need Python and IPython installed on your computer, as well as a few core additional packages, including re, numpy, scipy, and pandas. 
 
@@ -697,6 +697,11 @@ dat2007['lifeExpZ'] = dat2007.groupby('continent')['lifeExp'].transform(stdize)
 - Use *pd.merge()* to merge the continent means for life expectancy for 2007 back into the original *dat2007* dataFrame.
 
 
+
+
+Additional topics
+==================
+
 Style 
 -----
 
@@ -718,12 +723,8 @@ conventions. Similarly,
 automatically format your code so that it conforms to the PEP8
 standards. I have used both a little and they seem to work fairly well.
 
-
-Additional topics
-==================
-
 Classes
-=======
+------------
 
 -   <https://docs.python.org/3/tutorial/classes.html>
 
@@ -762,7 +763,7 @@ x.counter
 ```
 
 Strings
-============
+----------
 
 Strings are immutable sequences of (zero or more) characters.
 

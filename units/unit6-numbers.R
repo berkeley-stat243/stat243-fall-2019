@@ -102,6 +102,7 @@ dg(.Machine$double.eps + 1)
 bits(2^(-1)) # 1/2
 bits(2^0)  # 1
 bits(2^1)  # 2
+bits(2^1 + 2^0)  # 3
 bits(2^2)  # 4
 
 bits(-2)
