@@ -358,7 +358,6 @@ math.cosh       math.frexp      math.modf
 
 
 
-
 **Exercises**
 
 - Using the section on "Built-in Types" from the [official "The Python
@@ -366,7 +365,8 @@ Standard Library" reference](https://docs.python.org/3/library/index.html), figu
     1.  $(\lceil \frac{3}{4} \rceil \times 4)^3$, 
     and
     2.  $\sqrt{-1}$.
-```
+
+
 
 Objects and object-oriented programming
 ---------------------------------------
@@ -586,13 +586,13 @@ add(y=-5, 3)
 - Define a function that will take the sqrt of a number and will (if requested by the user) set the square root of a negative number to 0.
 
 
-Math and statistics
+Math and Statistics
 ======================
 
-Numpy and scipy
+NumPy and SciPy
 -------------
 
-Standard lists in Python are not amenable to mathematical manipulation unlike standard vectors in R. Instead we generally work with numpy arrays. These arrays can be of various dimensions (i.e., vectors, matrices, multi-dimensional arrays).
+Standard lists in Python are not amenable to mathematical manipulation unlike standard vectors in R. Instead we generally work with numpy arrays. These arrays can be of various dimensions (i.e., vectors, matrices, multi-dimensional arrays). One important difference between R and numpy objects is that numpy performs operations *in place* - i.e. the object itself is modified and no copies are made. 
 
 ``` {.sourceCode .python}
 z = [0, 1, 2] 

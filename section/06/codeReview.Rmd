@@ -190,6 +190,46 @@ correct methods to do it.
     cat("Length of list is:", length(myList),
         "\nLength of vector is:", length(myVec))
     ```
+
+6. Vectorizing  
+"Vectorizing" in R implies using functions that operate in parallel over certain objects.
+R is vectorized in many operations (addition, subtraction, multiplication, division). 
+Many functions have built-in vectorization as well, make sure to check the function 
+documentation.
+    ```{r, eval = TRUE, hold = TRUE}
+    ####################
+    ## vectorized division
+    ####################
+    x <- 1:100
+    y <- 100:1
+    
+    mHold <- mapply(FUN = "/", x, y)
+    dHold <- x/y
+    
+    all.equal(mHold, dHold)
+    identical(mHold, dHold)
+    
+    ####################
+    ## vectorized multinomial
+    ####################
+    myprobs <- matrix(data = c(0.1,0.1,0.8, 1/3,1/3,1/3), nrow = 2, byrow = T)
+    
+    set.seed(0)
+    apHold <- t(apply(X = myprobs, MARGIN = 1, FUN = rmultinom, n = 1, size = 100))
+    
+    set.seed(0)
+    edHold <- extraDistr::rmnom(n = 2, size = 100, prob = myprobs)
+    
+    all.equal(apHold, edHold)
+    identical(apHold, edHold) # why false?
+    
+    # short benchmark
+    microbenchmark::microbenchmark("apply" = apply(X = myprobs, MARGIN = 1,
+                                                   FUN = rmultinom, n = 1, size = 100),
+                                   "vector" = extraDistr::rmnom(n = 2, size = 100,
+                                                                prob = myprobs),
+                                   times = 100)
+    ```
 \newpage
 
 ## PS3 Code Review
