@@ -178,20 +178,20 @@ Python prompt or other files by importing it. Typically, this is done at
 the top of a file (if you are working at a prompt, you just need to
 import it before you want to use the functionality).
 
-Note that the use of `test.` is similar to our discussion of package
+Note that the use of `mytest.` is similar to our discussion of package
 namespaces in R.
 
 ``` {.sourceCode .bash}
-cat test.py  # special IPython functionality to call the operating system
+cat mytest.py  # special IPython functionality to call the operating system
 ```
 
 ``` {.sourceCode .python}
 del(a); del(hello)   # delete any existing objects
 
-import test          # make available objects/functions in test.py
+import mytest          # make available objects/functions in mytest.py
 
-test.hello()         # access using object-oriented style syntax
-test.a
+mytest.hello()         # access using object-oriented style syntax
+mytest.a
 
 hello()
 a
@@ -201,7 +201,7 @@ We can import everything in the test.py file if we want. Why
 might this not be a great idea?
 
 ``` {.sourceCode .python}
-from test import *
+from mytest import *
 
 hello()
 a
