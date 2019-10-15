@@ -1298,25 +1298,6 @@ precision-implications, tidy=FALSE
 \end_layout
 
 \begin_layout Standard
-Suppose we try this calculation: 
-\begin_inset Formula $123456781234-.0000123456781234$
-\end_inset
-
-.
- How many decimal places do we expect to be accurate? 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-the 8 is not accurate compare 3.99998 to 4.00000 and we see we're off
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The spacing of possible computer numbers that have a magnitude of about
  1 leads us to another definition of 
 \emph on
@@ -2026,20 +2007,42 @@ magnitude-diff
 \end_layout
 
 \begin_layout Standard
-The absolute error in representing the larger number is around 
+The larger number in the calculations above is of magnitude 
+\begin_inset Formula $10^{11}$
+\end_inset
+
+, so the absolute error in representing the larger number is around 
 \begin_inset Formula $1\times10^{^{-5}}$
 \end_inset
 
- and the smaller number is smaller than this.
+.
+ Thus in the calculations above we can only expect the answers to be accurate
+ to about 
+\begin_inset Formula $1\times10^{-5}$
+\end_inset
+
+.
+ In the last calculation above, the smaller number is smaller than 
+\begin_inset Formula $1\times10^{-5}$
+\end_inset
+
+ and so doing the subtraction has had no effect.
+ This is analogous to trying to do 
+\begin_inset Formula $1+1\times10^{-16}$
+\end_inset
+
+ and seeing that the result is still 1.
 \begin_inset Newline newline
 \end_inset
 
-A work-around is to add a set of numbers in increasing order.
+A work-around when we are adding numbers of very different magnitudes is
+ to add a set of numbers in increasing order.
  However, if the numbers are all of similar magnitude, then by the time
  you add ones later in the summation, the partial sum will be much larger
  than the new term.
- A work-around is to add the numbers in a tree-like fashion, so that each
- addition involves a summation of numbers of similar size.
+ A (second) work-around to that problem is to add the numbers in a tree-like
+ fashion, so that each addition involves a summation of numbers of similar
+ size.
  
 \end_layout
 
