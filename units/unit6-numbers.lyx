@@ -758,7 +758,11 @@ where the computer uses base 2,
 \begin_inset Formula $b=2$
 \end_inset
 
-, because base-2 arithmetic is faster than base-10 arithmetic.
+, (so 
+\begin_inset Formula $d_{i}\in\{0,1\}$
+\end_inset
+
+) because base-2 arithmetic is faster than base-10 arithmetic.
  The leading 1 normalizes the number; i.e., ensures there is a unique representati
 on for a given computer number.
  This avoids representing any number in multiple ways, e.g., either 
