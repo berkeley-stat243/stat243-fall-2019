@@ -136,19 +136,19 @@ a<span class="op">*</span><span class="dv">4</span>
 <span class="bu">len</span>(a)</code></pre></div>
 <h2 id="modules-files-packages-import">Modules, files, packages, import</h2>
 <p>While you will often explore things from an interactive Python prompt, you will save your code in files for reuse as well as to document what you’ve done. You can use Python code saved in a plain text file from a Python prompt or other files by importing it. Typically, this is done at the top of a file (if you are working at a prompt, you just need to import it before you want to use the functionality).</p>
-<p>Note that the use of <code>test.</code> is similar to our discussion of package namespaces in R.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> test.py  # special IPython functionality to call the operating system</code></pre></div>
+<p>Note that the use of <code>mytest.</code> is similar to our discussion of package namespaces in R.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> mytest.py  # special IPython functionality to call the operating system</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">del</span>(a)<span class="op">;</span> <span class="kw">del</span>(hello)   <span class="co"># delete any existing objects</span>
 
-<span class="im">import</span> test          <span class="co"># make available objects/functions in test.py</span>
+<span class="im">import</span> mytest          <span class="co"># make available objects/functions in mytest.py</span>
 
-test.hello()         <span class="co"># access using object-oriented style syntax</span>
-test.a
+mytest.hello()         <span class="co"># access using object-oriented style syntax</span>
+mytest.a
 
 hello()
 a</code></pre></div>
 <p>We can import everything in the test.py file if we want. Why might this not be a great idea?</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> test <span class="im">import</span> <span class="op">*</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mytest <span class="im">import</span> <span class="op">*</span>
 
 hello()
 a</code></pre></div>
@@ -174,7 +174,7 @@ np.arctan(<span class="dv">1</span>)
 In [<span class="dv">2</span>]: np.ndim?
 Type:        function
 String form: <span class="op">&lt;</span>function ndim at <span class="bn">0x7fcabd864938</span><span class="op">&gt;</span>
-File:        <span class="op">/</span>usr<span class="op">/</span>lib64<span class="op">/</span>python2<span class="fl">.7</span><span class="op">/</span>site<span class="op">-</span>packages<span class="op">/</span>numpy<span class="op">/</span>core<span class="op">/</span>fromnumeric.py
+File:        <span class="op">/</span>usr<span class="op">/</span>lib64<span class="op">/</span>python2.<span class="dv">7</span><span class="op">/</span>site<span class="op">-</span>packages<span class="op">/</span>numpy<span class="op">/</span>core<span class="op">/</span>fromnumeric.py
 Definition:  np.ndim(a)
 Docstring:
 Return the number of dimensions of an array.
@@ -381,7 +381,7 @@ students.</code></pre></div>
 <p>Building up a list piece-by-piece is a common task, which can easily be done in a for-loop. An approach called 'List comprehension' provides a compact syntax to handle this task.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">y <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)]
 
-vals <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">-1</span>, <span class="fl">2.5</span>, <span class="dv">7</span>]
+vals <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="fl">2.5</span>, <span class="dv">7</span>]
 [x <span class="cf">for</span> x <span class="kw">in</span> vals <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>]  <span class="co"># list comprehension</span></code></pre></div>
 <p><strong>Exercises</strong></p>
 <ul>
