@@ -298,8 +298,14 @@ dg(a-b, 35)
 
 ## @knitr real-catastrophe
 
-x <- c(-1, 0, 1) + 1e8
+## No problem here:
+x <- c(-1, 0, 1)
 n <- length(x)
+sum(x^2)-n*mean(x)^2 
+sum((x - mean(x))^2)
+
+## Adding/subtracting a constant shouldn't change the result:
+x <- x + 1e8
 sum(x^2)-n*mean(x)^2  # that's not good!
 sum((x - mean(x))^2)
 
