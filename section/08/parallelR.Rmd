@@ -289,39 +289,4 @@ Similarly you can load packages with the .packages option, e.g. `.packages = c("
 I strongly recommend always exporting the variables you need as it limits issues 
 that arise when encapsulating the code within functions.
 
-
-
-
-
-
-
-
-
-### Memory Handling
-
-This isn't working right, not sure what's up yet.
-
-Unless you are using multiple computers or Windows or planning on sharing your 
-code with someone using a Windows machine, you should try to use `multicore` option. 
-It is leaner on the memory usage by linking to the same address space. Below you 
-can see that the memory address space for variables exported to `multisession` are 
-not the same as the original:
-
-```{r}
-a <- "o"
-
-plan(strategy = multisession, workers = nCores)
-
-future_sapply(X = 1:10, function(x) {.Internal(inspect(a))}) == .Internal(inspect(a))
-```
-
-
-While they are for FORK clusters:
-
-```{r}
-plan(strategy = multicore, workers = nCores)
-
-future_sapply(X = 1:10, function(x) {.Internal(inspect(a))}) == .Internal(inspect(a))
-```
-
 Now move on to `scfOverview.pdf`

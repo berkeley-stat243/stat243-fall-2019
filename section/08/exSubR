@@ -16,7 +16,9 @@
 # What to run
 ####################
 
-Rscript --no-save /accounts/campus/jared_bennett/exR.R
+R CMD BATCH --no-save /accounts/campus/jared_bennett/exR.R /accounts/campus/jared_bennett/exR.Rout
+
+##Rscript --no-save /accounts/campus/jared_bennett/exR.R
 
 
 
