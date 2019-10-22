@@ -1,0 +1,22 @@
+#!/bin/bash
+
+####################
+# SBATCH OPTIONS
+####################
+#SBATCH --job-name=example				# job name fore queue, default may be user-id, but unsure
+#SBATCH --partition=low					# high/low/gpu, default if empty is low
+#SBATCH --error=/accounts/campus/jared_bennett/ex.err 	# error file, default if empty is slurm-<jobid>.err
+#SBATCH --output=/accounts/campus/jared_bennett/ex.out	# standard out file, no default
+#SBATCH --time=00:01:00					# hours:minutes:seconds
+##SBATCH --nodes=1 					# only use 1 node, MPI option
+##SBATCH --ntasks=1 					# how many tasks to start
+##SBATCH --cpus-per-task=1				# number of cores to use, multi-core/multi-thread jobs
+
+####################
+# What to run
+####################
+
+/accounts/campus/jared_bennett/example.sh
+
+
+

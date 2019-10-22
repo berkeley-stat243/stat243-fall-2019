@@ -7,3 +7,22 @@ In an interactive session do the following
 
 Now replicate what you did above but using sbatch to submit your job as a batch job, where step 2 involves running R from the command line using R CMD BATCH.
 
+
+
+Jared:
+Files to provide:
+  Pre-lab
+  example.sh - example script that does something small
+  exSub - example submission script for SBATCH commands
+  pdf overview
+  Post-lab
+  foreach and future_lapply examples to do the task
+My plan:
+  1) go over SCF cluster structure/organization (if possible...)
+  2) login, do some things
+    a) find my directory, find scratch space, etc
+    b) show modules and how to load/unload, why doesn't module spider work?
+    c) talk about and run example script
+    d) talk about job submission, run example script
+  3) release them to do the assignment
+  4) release assignment solutions after class
