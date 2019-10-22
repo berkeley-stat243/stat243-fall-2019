@@ -122,29 +122,6 @@ doing transfers via SFTP is *FileZilla*. After logging in, you'll see windows fo
 the SCF filesystem and your local filesystem on your machine. You can drag files 
 back and forth.
 
-# Software modules
-
-A lot of software is available on SCF but needs to be loaded from the relevant 
-software module before you can use it.
-
-```
-module list  # what's loaded?
-module avail  # what's available
-```
-
-One thing that tricks people is that the modules are arranged in a hierarchical 
-(nested) fashion, so you only see some of the modules as being available *after* 
-you load the parent module. Here's how we see the Python packages that are available.
-
-```
-which R # R is /usr/bin/R
-
-module avail
-module load R/3.5.1
-which R # R is /usr/local/linux/R-3.5.1/bin/R
-module avail
-```
-
 
 # Submitting jobs: accounts and partitions
 
@@ -153,22 +130,6 @@ manages jobs on the cluster, called SLURM (Simple Linux Utility for Resource Man
 
 There is nothing you must specify to submit jobs to the SCF cluster, however, there 
 are several options that are good form (more on this below).
-
-You can see what accounts you have access to and which partitions within those accounts as follows:
-
-```
-sacctmgr -p show associations user=SCF_USERNAME
-```
-
-Here's an example of the output for me. I have access to 2 accounts.
-
-```
-Cluster|Account|User|Partition|Share|GrpJobs|GrpTRES|GrpSubmit|GrpWall|GrpTRESMins|MaxJobs|MaxTRES|MaxTRESPerNode|MaxSubmit|MaxWall|MaxTRESMins|QOS|Def QOS|GrpTRESRunMins|
-screms|site|jared_bennett||1||||||||||||normal|||
-sm|site|jared_bennett||1||||||||||||normal|||
-```
-
-To see what groups your user is a part of, you can use `groups SCF_USERNAME`.
 
 
 # Interactive jobs
@@ -265,21 +226,15 @@ squeue -p low,high,gpu -o "%.14i %.6P %.20j %.12u %.2t %.11l %.11M %.11V %.5C \
 We provide some [tips about monitoring your job](http://research-it.berkeley.edu/services/high-performance-computing/tips-using-brc-savio-cluster).
 
 
-
-
-
-
-
-
 # Exercise
 
 Consider the Wikipedia traffic data in `/scratch/users/paciorek/wikistats/dated_2017_small/dated` 
 on the SCF cluster.
 
-1) In an interactive shell, copy the first 30 files to your `/tmp` directory. (recall 
-the use of wildcards in file globbing to select a set of files, from the unit/tutorial on bash) 
-
-2) Run R code to do the following: Using the future package, with either future_lapply 
+1) In an interactive shell:
+    - Copy the first 30 files to your `/tmp` directory. (recall the use of wildcards 
+    in file globbing to select a set of files, from the unit/tutorial on bash) 
+    - Run R code to do the following: Using the future package, with either future_lapply 
 or foreach with the doFuture backend, write code that, in parallel, reads in the 
 space-delimited file and filters to only the rows that refer to pages where "Barack_Obama" 
 appears. You can use the code from unit7-parallel.R as a template, in particular 
