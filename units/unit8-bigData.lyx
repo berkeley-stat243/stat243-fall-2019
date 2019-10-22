@@ -1754,6 +1754,11 @@ end{verbatim}
 
 \end_layout
 
+\begin_layout Standard
+Note: calling compute twice is a bad idea as Dask will read in the data
+ twice - see the end of Section 2.3.2 for more discussion.
+\end_layout
+
 \begin_layout Subsubsection
 Dask bags
 \end_layout

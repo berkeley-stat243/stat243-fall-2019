@@ -1,0 +1,427 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{times,graphics}
+%\input{/accounts/gen/vis/paciorek/latex/paciorekMacros}
+
+
+%\renewcommand{\baselinestretch}{1.5}
+% Added by lyx2lyx
+\renewcommand{\textendash}{--}
+\renewcommand{\textemdash}{---}
+\end_preamble
+\use_default_options false
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Stat243: Problem Set 5, Due Monday Oct.
+ 28
+\end_layout
+
+\begin_layout Standard
+Comments:
+\end_layout
+
+\begin_layout Itemize
+This covers Unit 6 and the initial part of Unit 9.
+\end_layout
+
+\begin_layout Itemize
+It's due at 2 pm on Monday October 28, 
+\series bold
+both submitted as a PDF to bCourses as well as committed to your Github
+ repository
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Please note my comments in the syllabus about when to ask for help and about
+ working together.
+ In particular, 
+\series bold
+please give the names of any other students that you worked with on the
+ problem set and indicate in comments any ideas or code you borrowed from
+ another student.
+\end_layout
+
+\begin_layout Itemize
+The formatting requirements are the same as previous problem sets.
+ 
+\end_layout
+
+\begin_layout Section*
+Problems
+\end_layout
+
+\begin_layout Enumerate
+In class and in the Unit 6 notes, I mentioned that integers as large as
+ 
+\begin_inset Formula $2^{53}$
+\end_inset
+
+ can be stored exactly in the double precision floating point representation.
+ Demonstrate how the integers 1, 2, 3, ...,
+\begin_inset Formula $2^{53}-2$
+\end_inset
+
+, 
+\begin_inset Formula $2^{53}-1$
+\end_inset
+
+ can be stored exactly in the 
+\begin_inset Formula $(-1)^{S}\times1.d\times2^{e-1023}$
+\end_inset
+
+ format where 
+\begin_inset Formula $d$
+\end_inset
+
+ is represented as 52 bits.
+ I'm not expecting anything particularly formal - just write out for a few
+ numbers and show the pattern.
+ Then show that 
+\begin_inset Formula $2^{53}$
+\end_inset
+
+ and 
+\begin_inset Formula $2^{53}+2$
+\end_inset
+
+ can be represented exactly but 
+\begin_inset Formula $2^{53}+1$
+\end_inset
+
+ cannot, so the spacing of numbers of this magnitude is 2.
+ Finally show that for numbers starting with 
+\begin_inset Formula $2^{54}$
+\end_inset
+
+ that the spacing between integers that can be represented exactly is 4.
+ (Note you don't need to write out 
+\begin_inset Formula $e$
+\end_inset
+
+ in base 2; you can use base 10).
+ Then confirm that what you've shown is consistent with the result of executing
+ 
+\begin_inset Formula $2^{53}-1$
+\end_inset
+
+, 
+\begin_inset Formula $2^{53}$
+\end_inset
+
+, and 
+\begin_inset Formula $2^{53}+1$
+\end_inset
+
+ in R.
+\end_layout
+
+\begin_layout Enumerate
+Here we'll consider the effects of adding together numbers of very different
+ sizes.
+ Let's consider adding the number 
+\begin_inset Formula $1$
+\end_inset
+
+ to 10000 copies of the number 
+\begin_inset Formula $1\times10^{-16}$
+\end_inset
+
+.
+ Mathematically the answer is obviously 
+\begin_inset Formula $1+1\times10^{-12}=1.000000000001$
+\end_inset
+
+ by multiplication, but we want to use this as an example of the accuracy
+ of summation with numbers of very different magnitudes, so consider the
+ sum 
+\begin_inset Formula $1+1\times10^{-16}+\cdots+1\times10^{-16}$
+\end_inset
+
+.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+How many digits of accuracy are the most we can expect of our result (i.e.,
+ assuming we don't carry out the calculations in a dumb way).
+ In other words, if we store 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1.000000000001
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ on a computer, how many digits of accuracy do we have? This is not a trick
+ question.
+\end_layout
+
+\begin_layout Enumerate
+In R, create the vector 
+\begin_inset Formula $x=c(1,1\times10^{-16},\ldots,1\times10^{-16})$
+\end_inset
+
+.
+ Does the use of 
+\emph on
+sum()
+\emph default
+ give the right answer up to the accuracy expected from part (a)?
+\end_layout
+
+\begin_layout Enumerate
+Do the same as in (b) in Python.
+ For Python the 
+\emph on
+Decimal()
+\emph default
+ function from the decimal package is useful for printing additional digits.
+ Also, this code will help you get started in creating the needed vector:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+prob2, engine='python'
+\end_layout
+
+\end_inset
+
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+
+vec = np.array([1e-16]*(10001)) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Use a 
+\emph on
+for
+\emph default
+ loop to do the summation, 
+\begin_inset Formula $((x_{1}+x_{2})+x_{3})+...$
+\end_inset
+
+ .
+ Does this give the right answer? Now use a 
+\emph on
+for
+\emph default
+ loop to do the summation with the 1 as the last value in the vector instead
+ of the first value.
+ Right answer? If either of these don't give the right answer, how many
+ decimal places of accuracy does the answer have? Do the same in Python.
+ 
+\end_layout
+
+\begin_layout Standard
+Your results from (b) and (d) should suggest that R's 
+\emph on
+sum()
+\emph default
+ function is not simply summing the numbers from left to right.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Please read Section 1 of Unit 9 (Numerical Linear Algebra) and answer the
+ following question.
+ For a symmetric matrix A, we have the following matrix decomposition (the
+ eigendecomposition): 
+\begin_inset Formula $A=\Gamma\Lambda\Gamma^{\top}$
+\end_inset
+
+, where 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ is an orthogonal matrix of (column) eigenvectors, and 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ is a diagonal matrix of eigenvalues.
+ Use the properties discussed in Section 1 to briefly show that 
+\begin_inset Formula $|A|$
+\end_inset
+
+ is the product of the eigenvalues.
+\end_layout
+
+\begin_layout Enumerate
+Extra credit: This problem explores the smallest positive number that R
+ can represent and how R represents numbers just larger than the smallest
+ positive number that can be represented.
+ (Note: if you did this in Python you'd get the same results.)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+By experimentation in R, find the base 10 representation of the smallest
+ positive number that can be represented in R.
+ Hint: it's rather smaller than 
+\begin_inset Formula $1\times10^{-308}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Explain how it can be that we can store a number smaller than 
+\begin_inset Formula $1\times2^{-1022}$
+\end_inset
+
+, which is the value of the smallest positive number that we discussed in
+ class.
+ Start by looking at the bit-wise representation of 
+\begin_inset Formula $1\times2^{-1022}$
+\end_inset
+
+.
+ What happens if you then figure out the natural representation of 
+\begin_inset Formula $1\times2^{-1023}$
+\end_inset
+
+? You should see that what you get is actually a well-known number that
+ is not equal to 
+\begin_inset Formula $1\times2^{-1023}$
+\end_inset
+
+.
+ Given the actual bit-wise representation of 
+\begin_inset Formula $1\times2^{-1023}$
+\end_inset
+
+, show the progression of numbers smaller than that that can be represented
+ exactly and show the smallest number that can be represented in R written
+ in both base 2 and base 10.
+\end_layout
+
+\begin_layout Standard
+Hint: you'll be working with numbers that are not normalized (i.e., denormalized;
+ numbers that do not have 1 as the fixed number before the decimal point
+ in the representation at the bottom of page 7 of Unit 6).
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
