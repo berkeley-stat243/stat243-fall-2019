@@ -244,8 +244,8 @@ into a single data frame. Run your code using an interactive session.
 3) Now replicate what you did above but using sbatch to submit your job as a batch 
 job, where step 2 involves running R from the command line using R CMD BATCH.
 
-Note that as we saw in class, the data are the number of hits on different Wikipedia 
-pages for November 4, 2008. The columns are: date, time, language, webpage, number of hits, and page size.
+Note that as we will see in class, the data are the number of hits on different Wikipedia 
+pages for November 4, 2008. The columns are: date, time, language, webpage, number of hits, and page size. `Barack_Obama` will be found in the 4th column.
 
 
 
