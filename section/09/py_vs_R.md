@@ -8,8 +8,8 @@ will be a markdown document with your answers to the questions below.
 
 ----------
 
-1) Separate into groups of 3 or 4
-    - Make sure there is no more than 1 person with Python experience in each group
+1) Separate into groups of (ideally) 3 or (if necessary) 4
+    - Make sure there is no more than 1 person with extensive Python experience in each group
 2) Everyone needs to create a new folder in their github repository, `section09`
     - It must be called exactly this, or else we can't find it later
 3) Groups should try to answer every question below. There are 2 ways to go about this:
@@ -22,7 +22,7 @@ will be a markdown document with your answers to the questions below.
 github.
     - The document must be named `s09Solutions.Rmd`
     - Each group member must upload the exact same document to their own repository
-    - i.e., for a 3-person group, there will be 3 submissions that are exactly the same
+    - i.e., for a 3-person group, there will be three submissions that are exactly the same.
 
 ### Questions
 
