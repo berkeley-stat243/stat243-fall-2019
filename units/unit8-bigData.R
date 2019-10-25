@@ -188,14 +188,14 @@ result1 <- dbGetQuery(db, "select * from
         Q.questionid = T.questionid and
         Q.ownerid = U.userid and
         tag = 'python' and
-        age < 18")
+        age > 60")
 
 result2 <- dbGetQuery(db, "select * from
         questions Q
         join questions_tags T on Q.questionid = T.questionid
         join users U on Q.ownerid = U.userid
         where tag = 'python' and
-        age < 18")
+        age > 60")
 
 identical(result1, result2)
 

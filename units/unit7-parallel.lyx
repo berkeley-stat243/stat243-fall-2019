@@ -2706,6 +2706,16 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+The map operation appears to cache results.
+ If you rerun the above with the same inputs, you get the same result back
+ essentially instantaneously.
+ HOWEVER, that means that if there is randomness in the results of your
+ function for a given input, Dask will just continue to return the original
+ output.
+ 
+\end_layout
+
 \begin_layout Subsection
 Futures / delayed evaluation
 \end_layout
@@ -2746,16 +2756,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-The map operation appears to cache results.
- If you rerun the above with the same inputs, you get the same result back
- essentially instantaneously.
- HOWEVER, that means that if there is randomness in the results of your
- function for a given input, Dask will just continue to return the original
- output.
- 
 \end_layout
 
 \begin_layout Subsection

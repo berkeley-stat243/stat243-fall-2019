@@ -3472,7 +3472,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<drop-view, include=FALSE, eval=FALSE>>=
+<<view>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -3491,7 +3491,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<view>>=
+<<drop-view, include=FALSE, eval=TRUE>>=
 \end_layout
 
 \begin_layout Plain Layout

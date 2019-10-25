@@ -188,7 +188,8 @@ air = ddf.read_csv(path + '*.csv.bz2',
       dtype = {'Distance': 'float64', 'CRSElapsedTime': 'float64',
       'TailNum': 'object', 'CancellationCode': 'object'})
 # specify dtypes so Pandas doesn't complain about column type heterogeneity
-      
+air
+
 ## @knitr dask-df-compute
 
 air.DepDelay.max().compute()   # this takes a while
