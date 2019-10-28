@@ -46,7 +46,7 @@ library(future)
 ntasks <- 3
 plan(multiprocess, workers = ntasks)
 
-n <- 1000000
+n <- 10000000
 system.time({
 	fut_p <- future(mean(rnorm(n)))
 	fut_q <- future(mean(rgamma(n, shape = 1)))
