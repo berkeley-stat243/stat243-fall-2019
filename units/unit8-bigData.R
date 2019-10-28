@@ -235,8 +235,6 @@ system.time(dbGetQuery(db,
 
 ## 3.11 Temporary tables and views
 
-## @knitr drop-view
-dbGetQuery(db, "drop view questionsAugment") # drop so can create again in next step
 
 
 ## @knitr view
@@ -252,6 +250,9 @@ dbGetQuery(db, "create view questionsAugment as select
 ## the view HAS been created
                
 dbGetQuery(db, "select * from questionsAugment where age < 15 limit 5")
+
+## @knitr drop-view
+dbGetQuery(db, "drop view questionsAugment") # drop so can create again in next step
 
 ## @knitr
 
