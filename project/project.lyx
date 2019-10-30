@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage{/accounts/gen/vis/paciorek/latex/paciorek-asa,times,graphics}
@@ -19,16 +21,18 @@ knitr
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -58,6 +62,7 @@ knitr
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -70,7 +75,10 @@ knitr
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -124,6 +132,7 @@ Your task is to make an R package to implement a genetic algorithm for variable
 LatexCommand href
 name "electronic book available on Oskicat"
 target "http://librarysurvey.berkeley.edu/librarysurvey/library.survey.logic?refUrl=http%3A%2F%2Fdx.doi.org%2F10.1002%2F9781118555552"
+literal "false"
 
 \end_inset
 
@@ -181,9 +190,9 @@ In terms of efficiency, the generations are inherently sequential.
 \end_layout
 
 \begin_layout Enumerate
-Show the results of using your implementation on one or more real examples.
- Have the use of the package on the example(s) be coded in the example section
- of the R help for one or more of your functions.
+Show the results of using your implementation on two or more examples.
+ Have the use of the package on the examples be coded in the example section
+ of the R help for your main function.
 \end_layout
 
 \begin_layout Enumerate
@@ -193,19 +202,14 @@ Formal testing is required, with a set of tests where results are compared
  anything complicated.
  For testing the overall function, since the algorithm is stochastic, you'll
  need to think carefully about how to set this up.
- The output of your testing should be clear and interpretable.
- I.e., when I run your tests I should see informative messages of what is
- being done and whether a given test was passed or failed.
  You should also have unit tests for individual functions that carry out
  the individual computations that make up the algorithm.
- Please use the 
-\emph on
-testthat
-\emph default
- package, for which there is information here: 
+ See mor details below on how to set up the tests.
+ There is more information on testing here: 
 \begin_inset CommandInset href
 LatexCommand href
 target "http://r-pkgs.had.co.nz/tests.html"
+literal "false"
 
 \end_inset
 
@@ -215,6 +219,10 @@ target "http://r-pkgs.had.co.nz/tests.html"
 
 \begin_layout Enumerate
 Your solution should include help/manual information as follows: 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -243,6 +251,7 @@ roxygen2
 \begin_inset CommandInset href
 LatexCommand href
 target "http://adv-r.had.co.nz/Documenting-functions.html"
+literal "false"
 
 \end_inset
 
@@ -254,6 +263,10 @@ target "http://adv-r.had.co.nz/Documenting-functions.html"
 \end_deeper
 \begin_layout Enumerate
 Your solution to the problem should have two parts: 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -282,16 +295,21 @@ username
 \begin_inset CommandInset href
 LatexCommand href
 target "http://r-pkgs.had.co.nz/"
+literal "false"
 
 \end_inset
 
 .
  You can use 
 \emph on
-devtools::create
+usethis::create_package
 \emph default
  to create the initial set of directories for the package.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -324,15 +342,19 @@ R
 \end_layout
 
 \begin_layout Enumerate
-Formal tests, located in the 
+Formal tests, located in the package.
+ You can set this up with 
 \emph on
-tests
+usethis::use_testthat
 \emph default
- directory of the package.
- I don't care about the exact structure of the tests folder in your R package,
- so long as I can run 
+; however, I don't care about the exact structure of the tests folder in
+ your R package, so long as I can run either 
 \family typewriter
-test_package('GA')
+devtools::test('GA')
+\family default
+ or 
+\family typewriter
+testthat::test_package('GA')
 \family default
  and have it run all your tests.
 \end_layout
@@ -351,9 +373,10 @@ man
 
 \end_deeper
 \begin_layout Enumerate
-A PDF document describing your solution, prepared in LaTeX or R Markdown.
- The description does not need to be more than a couple pages, but should
- describe the approach you took in terms of functions/modularity/object-oriented
+A PDF document describing your solution, prepared in R Markdown or \SpecialChar LaTeX
+.
+ The description does not need to be more than 2-4 pages, but should describe
+ the approach you took in terms of functions/modularity/object-oriented
  programming, the testing that you carried out, and the results of applying
  the implementation to the example(s).
  It must include a paragraph describing the specific contributions of each
