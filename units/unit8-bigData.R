@@ -240,19 +240,17 @@ system.time(dbGetQuery(db,
 ## @knitr view
 
 ## note there is a creationdate in users too, hence disambiguation
-dbGetQuery(db, "create view questionsAugment as select
+dbExecute(db, "create view questionsAugment as select
                 questionid, questions.creationdate, score, viewcount,
                 title, ownerid, age, displayname
                 from questions join users
                 on questions.ownerid = users.userid")
-## don't be confused by the "data frame with 0 columns and 0 rows"
-## message -- it just means that nothing is returned to R;
-## the view HAS been created
+## you'll see the return value is '0'
                
 dbGetQuery(db, "select * from questionsAugment where age < 15 limit 5")
 
 ## @knitr drop-view
-dbGetQuery(db, "drop view questionsAugment") # drop so can create again in next step
+dbExecute(db, "drop view if exists questionsAugment") # drop so can create again in next step
 
 ## @knitr
 
