@@ -17,7 +17,7 @@ will be a markdown document with your answers to the questions below.
     - The group can work together, answering each question in turn
     - Feel free to use a mixture of the above methods, helping if members become stuck
     on any questions
-    - There is some example python code in this [repository](./syntax.py)
+    - There is some example python code in this [file](./syntax.py)
 4) Combine the solutions into one document that each group member must upload to their
 github.
     - The document must be named `s09Solutions.Rmd`
