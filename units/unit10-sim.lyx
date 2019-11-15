@@ -2209,15 +2209,8 @@ We can generally rely on the RNG in R to give a reasonable set of values.
 set.seed(mySeed)
 \emph default
  in R on every process.
- More details on parallel RNG are given in the Section 5 of the tutorial
- on basic parallel processing (
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/berkeley-scf/tutorial-parallel-basics"
-
-\end_inset
-
-).
+ More details on parallel RNG are given in Unit 7.
+ 
 \end_layout
 
 \begin_layout Section
