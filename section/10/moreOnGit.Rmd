@@ -165,7 +165,6 @@ This deletes everything in the commit history.
 
 
 ### Viewing Project History
-
 At any point you can view the history of your changes using:
 
 ```{bash}
@@ -295,5 +294,4 @@ seen and the [example document](./novella.txt) in provided in the repo.
   have already staged new changes?
     * What happens when a collaborator (or you on a different computer) edits the 
   same file?
-  
   
