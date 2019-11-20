@@ -272,6 +272,13 @@ the current branch.
 If you want to remove a branch without pulling the changes into the master branch, 
 the `-D` flag deletes it without checking any of the changes.
 
+This only removes the branch from your local machine.  
+To remove it from the remote repository, you use:  
+```{bash}
+git push -d origin experimental
+```
+
+
 At some point before removing a branch, you may want to merge the branch back into 
 the master branch. The best way to do this is using a [pull request](https://www.atlassian.com/git/tutorials/making-a-pull-request), which I 
 will demonstrate on github. Pull requests tell the repository maintainers what changes 
