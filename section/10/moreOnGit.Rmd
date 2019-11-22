@@ -1,5 +1,5 @@
 ---
-title: "More git Functionality"
+title: "More Git Functionality"
 author: "Jared Bennett"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: rmarkdown::pdf_document
@@ -82,22 +82,6 @@ your project in Git.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Making Changes
 
 ```{bash, eval= FALSE}
@@ -131,11 +115,6 @@ the index, and commit, all in one step.
 
 
 
-
-
-
-
-
 ### Git Tracks Contents, Not Files
 
 Many revision control systems provide an `add` command that tells the system to 
@@ -143,11 +122,6 @@ start tracking changes to a new file. Git's `add` command does something simpler
 and more powerful: `git add` is used both for new and newly modified files, and 
 in both cases it takes a snapshot of the given files and stages that content in 
 the index, ready for inclusion in the next commit.
-
-
-
-
-
 
 
 
@@ -190,23 +164,6 @@ This deletes everything in the commit history.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Viewing Project History
 At any point you can view the history of your changes using:
 
@@ -230,11 +187,6 @@ For a prettier, more detailed graph (with several more options to look up):
 ```{bash}
 git log --oneline --decorate --graph --all
 ```
-
-
-
-
-
 
 
 
@@ -320,7 +272,19 @@ the current branch.
 If you want to remove a branch without pulling the changes into the master branch, 
 the `-D` flag deletes it without checking any of the changes.
 
+This only removes the branch from your local machine.  
+To remove it from the remote repository, you use:  
+```{bash}
+git push -d origin experimental
+```
 
+
+At some point before removing a branch, you may want to merge the branch back into 
+the master branch. The best way to do this is using a [pull request](https://www.atlassian.com/git/tutorials/making-a-pull-request), which I 
+will demonstrate on github. Pull requests tell the repository maintainers what changes 
+you are proposing, whether it can be directly merged in or if there are conflicts, 
+and cleanly wraps the log from the other branch into one statement. You can also 
+set a [default template](./PULL_REQUEST_TEMPLATE.md) for your pull requests. 
 
 
 
@@ -328,14 +292,13 @@ the `-D` flag deletes it without checking any of the changes.
 
 We will do this as a partner exercise, using several of the things we have already 
 seen and the [example document](./novella.txt) in provided in the repo.  
-There are 2 conflicts that are common when working with multiple people or on 
-multiple machines.  
-  * Remote repo is ahead of your local one
-  * Collaborator modified the same lines of a files as you
 
-
-
-
-
-
-
+1) Find a partner (i.e., the person next to you, groups of 2 only)
+2) Create a new repo (just one of you, doesn't matter who)
+3) Add your partner as a collaborator
+4) I want everyone to test running-into and resolving 2 kinds of merge errors:
+    * What happens when the remote repository is ahead of your local one, but you 
+  have already staged new changes?
+    * What happens when a collaborator (or you on a different computer) edits the 
+  same file?
+  
