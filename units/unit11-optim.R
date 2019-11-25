@@ -205,6 +205,8 @@ lines(Days, fitted(wtloss.lm), col = "grey")
 ## guess that beta2 approx 100 since the midpoint of Days is near 100
 
 beta2.init = 100
+2^(-Days/beta2.init)  ## implicit covariate
+
 plot(2^(-Days/beta2.init), Weight)
 tmpMod = lm(Weight ~ I(2^(-Days/beta2.init)))
 beta0.init = tmpMod$coef[1]
