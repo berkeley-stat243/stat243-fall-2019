@@ -16,7 +16,7 @@ Open a Terminal by going to Applications -> Utilities -> Terminal
 
     https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
     
-    For more detailed instructions, see the [other](./windowsAndLinux.md) help file.
+    For more detailed instructions, see the [Windows and Linux](./windowsAndLinux.md) tutorial.
 
 2. There's an older program called cygwin that provides a UNIX command-line interface.
 

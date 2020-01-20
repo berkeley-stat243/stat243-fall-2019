@@ -1,24 +1,25 @@
 Windows 10 and the Ubuntu Subsystem
 ================
 Jared Bennett
-19 September, 2019
-
-# Windows 10 and the Ubuntu Subsystem
+19 January, 2020
 
 Windows 10 has a powerful new feature that allows a full Linux system to
 be installed and run from within Windows. This is incredibly useful for
 building/testing code in Linux, without having a dedicated Linux
 machine, but it poses strange new behaviors as two very different
-operating systems coexist in one place. This document contains basics on
-getting an Ubuntu system running in Windows 10, how to find files, and
-any updates deemed important throughout the semester.
+operating systems coexist in one place. Initially, this document mirrors
+the [Windows Install](./windowsInstall.md) tutorial, showing you how to
+install Ubuntu and setting up R, RStudio, and LaTex. Then, we cover some
+of the issues of running two systems together, starting with finding
+files, finding the Ubuntu subsystem, and file modifications.
 
 ## Installing Ubuntu
 
 There are 2 parts to installing a Linux subsystem in Windows. I will
 write this using Ubuntu as the example, as it is my preferred Linux
-distro, but several others are provided by Windows. Immediately below is
-the link where most of this is from.
+distro, but several others are provided by Windows.
+
+**Sources:**
 
   - [Official Windows
     Instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
@@ -31,25 +32,21 @@ By default, the Linux subsystem is an optional addition in Windows. This
 feature has to be enabled prior to installing Linux. There are two ways
 to do it.
 
-#### A) CMD Line
-
-The simplest way to enable the Linux subsystem is through PowerShell.
-
-1.  Open PowerShell as Administrator.
-2.  Run `Enable-WindowsOptionalFeature -Online -FeatureName
-    Microsoft-Windows-Subsystem-Linux`
-3.  Restart the computer
-
-#### B) GUI
-
-If you don’t wish to use PowerShell, you can work your way through the
-control panel and turn on the Linux subsystem.
-
-1.  Open the **settings** page through the search bar.
-2.  Go to **Programs and Features**.
-3.  Find **Turn Windows Features on or off** on the right side.
-4.  Enable the **Windows Subsystem for Linux** option.
-5.  Restart the computer.
+  - **CMD Line**  
+    The simplest way to enable the Linux subsystem is through
+    PowerShell.
+      - Open PowerShell as Administrator
+      - Run `Enable-WindowsOptionalFeature -Online -FeatureName
+        Microsoft-Windows-Subsystem-Linux`
+      - Restart the computer
+  - **GUI**  
+    If you don’t wish to use PowerShell, you can work your way through
+    the control panel and turn on the Linux subsystem.
+    1)  Open the **settings** page through the search bar
+    2)  Go to **Programs and Features**
+    3)  Find **Turn Windows Features on or off** on the right side
+    4)  Enable the **Windows Subsystem for Linux** option
+    5)  Restart the computer
 
 ### 2\) Install Linux Subsystem
 
@@ -57,13 +54,15 @@ Once the Linux subsystem feature has been enabled, there are multiple
 methods to download and install the Linux distro you want. I highly
 recommend installing Ubuntu from the Microsoft store. There are several
 other flavors available as well, but Ubuntu is generally the easiest to
-learn and most well supported.
+learn and the most well supported.
 
-1.  Open the **Microsoft Store**.
-2.  Search for **Ubuntu 18.04**.
-      - This is the current long-term-release, meaning it will be
-        supported for the next 5 years.
-3.  Click **Get**, and this should start the installation.
+1.  Open the **Microsoft Store**
+2.  Search for **Ubuntu**
+      - You’re looking for the highest number followed by LTS, currently
+        **18.04 LTS**. This is the current long-term-release, meaning it
+        will be supported for the next 5 years.
+3.  Click on the tile, then click **Get**, and this should start the
+    installation.
 4.  Follow the prompts to install Ubuntu.
 
 After installing Ubuntu, it is advisable to update it. This is something
@@ -72,6 +71,95 @@ you should do on a regular basis.
 1.  Open a Bash terminal.
 2.  Type `sudo apt update` to update your local package database.
 3.  Type `sudo apt upgrade` to upgrade your installed packages.
+
+## Installing R on the Linux Subsystem
+
+The Linux Subsystem behaves exactly like a regular Linux installation,
+but for completeness, I will provide instructions here for people new to
+Linux. These instructions are written from the perspective of Ubuntu,
+but will be similar for other repos.
+
+R is not a part of the standard Ubuntu installation. So, we have to add
+the repository manually to our repository list. This is relatively
+straightforward, and R supports several versions of Ubuntu.
+
+**Sources:**
+
+  - [CRAN](https://cran.r-project.org/) guide for Ubuntu
+  - [Digital
+    Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04)
+    quick tutorial
+
+<!-- end list -->
+
+1.  In a bash window, type `sudo apt-key adv --keyserver
+    keyserver.ubuntu.com --recv-keys
+    E298A3A825C0D65DFD57CBB651716619E084DAB9`
+      - This adds the key to “sign”, or validate, the R repository
+2.  Then, type `sudo add-apt-repository 'deb
+    https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'`
+      - `cloud.r-project.org` is the default mirror, however, it is
+        prudent to connect to the mirror closest to you geographically.
+        Berkeley has it’s own mirror, so the command with the Berkeley
+        mirror would look like `sudo add-apt-repository 'deb
+        https://cran.cnr.berkeley.edu/bin/linux/ubuntu bionic-cran35/'`
+3.  Finally, type `sudo apt install r-base`, and press `y` to confirm
+    installation
+4.  To test that it worked, type `R` into the console, and an R session
+    should begin
+      - Type `q()` to quit the R session
+
+## Installing Rstudio on the Linux Subsystem
+
+**THIS NO LONGER WORKS**  
+As of Rstudio 1.5.x, it does not run on WSL.
+[Link](https://github.com/rstudio/rstudio/issues/3615#issuecomment-427914311)  
+Also possible issues, WSL has no GUI, and therefore can’t support
+anything that uses a GUI.  
+These instructions work, but Rstudio doesn’t
+    run.
+
+**Sources:**
+
+  - [Rstudio](https://www.rstudio.com/products/rstudio/download/#download)
+  - [Source](https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt)
+
+<!-- end list -->
+
+1.  Go the the Rstudio website (link above) and download the appropriate
+    Rstudio Desktop version.
+      - For most people, this is the `Ubuntu 18 (64-bit)` installer.
+      - Save it somewhere that you can find it.
+      - You should have a file similar to `rstudio-<version
+        number>-amd64.deb`
+2.  Open a terminal window and navigate to wherever you saved the
+    rstudio install file.
+3.  Type the command `sudo dpkg -i ./rstudio-<version number>-amd64.deb`
+      - This tells the package installer (`dpkg`) to install (`-i`) the
+        file specified (`./thing.deb`)
+4.  Type the command `sudo apt-get install -f`
+      - This tells the package manager (`apt-get`) to fix (`-f`) any
+        dependency issues that may have arisen when installing the
+        package.
+5.  Type the command `which rstudio` to make sure the system can find
+    it.
+      - Output should be similar to `/usr/bin/rstudio`
+6.  Run rstudio from linux by typing `rstudio &`
+      - The `&` runs it in the background, allowing you to close the
+        terminal window.
+
+## Installing LaTeX on the Linux Subsystem
+
+LaTeX is a text-markup language used when generating .Rmd files.
+Generally, you need a text editor to go with your LaTeX installation,
+but since we’ll be accessing it through Rstudio, we already have the
+editor and just the base TeX.
+
+**Source**  
+[LaTeX](https://www.latex-project.org/)
+
+1.  Type `sudo apt-get install texlive-full`, press `y` to confirm
+    installation
 
 ## A Note on File Modification
 
@@ -152,38 +240,3 @@ future is by creating a desktop
 So, the final path to find your home directory from windows will look
 like:  
 `%userprofile%\AppData\Local\Packages\<Distro-Folder>\LocalStat\rootfs\home\<your-user-name>\`
-
-## Installing Rstudio on Linux Subsystem
-
-The Linux Subsystem behaves exactly like a regular Linux installation,
-but for completeness, I will provide instructions here for people new to
-Linux. These instructions are written from the perspective of Ubuntu,
-but will be similar for other
-    repos.
-
-  - [Rstudio](https://www.rstudio.com/products/rstudio/download/#download)
-  - [Source](https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt)
-
-<!-- end list -->
-
-1.  Go the the Rstudio website (link above) and download the appropriate
-    Rstudio Desktop version.
-      - For most people, this is the `Ubuntu 18 (64-bit)` installer.
-      - Save it somewhere that you can find it.
-      - You should have a file similar to `rstudio-<version
-        number>-amd64.deb`
-2.  Open a terminal window and navigate to wherever you saved the
-    rstudio install file.
-3.  Type the command `sudo dpkg -i ./rstudio-<version number>-amd64.deb`
-      - This tells the package installer (`dpkg`) to install (`-i`) the
-        file specified (`./thing.deb`)
-4.  Type the command `sudo apt-get install -f`
-      - This tells the package manager (`apt-get`) to fix (`-f`) any
-        dependency issues that may have arisen when installing the
-        package.
-5.  Type the command `which rstudio` to make sure the system can find
-    it.
-      - Output should be similar to `/usr/bin/rstudio`
-6.  Run rstudio from linux by typing `rstudio &`
-      - The `&` runs it in the background, allowing you to close the
-        terminal window.

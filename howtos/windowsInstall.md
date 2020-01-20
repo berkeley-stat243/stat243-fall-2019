@@ -3,8 +3,6 @@ R/Rstudio on Windows
 Jared Bennett
 19 January, 2020
 
-# R on Windows
-
 While R was built/designed for UNIX systems, it has been well adapted
 for Windows. Here, we’ll start with the basics of installing
 [R](https://www.r-project.org/) on Windows. Then, we’ll cover the
