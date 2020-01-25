@@ -122,14 +122,14 @@ Desktop version.
 
 ## Installing LaTeX on the Linux Subsystem
     
-LaTeX is a text-markup language used when generating .Rmd files. Generally, you 
-need a text editor to go with your LaTeX installation, but since we'll be accessing 
-it through Rstudio, we already have the editor and just the base TeX.  
-
+LaTeX is a text-markup language used when generating documents from .Rmd files. 
 **Source**  
   [LaTeX](https://www.latex-project.org/)  
 
 1. Type `sudo apt-get install texlive-full`, press `y` to confirm installation
+
+Generally, if you want to create and edit R Markdown documents you 
+will also need a text editor to go with your LaTeX installation, but we won't go into that here.
 
 
 ## A Note on File Modification

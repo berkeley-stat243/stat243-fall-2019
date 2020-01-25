@@ -1,13 +1,13 @@
 .PHONY: gitInstall RandRStudioInstall windowsInstall 
 
-all: gitInstall RandRStudioInstall windowsInstall 
+all: gitInstall RandRStudioInstall windowsInstall windowsAndLinux
 
 clean:
 	rm -rf *.md *.html 
 
 %.html: %.Rmd
 	echo $(<)
-	Rscript -e "library(knitr); knit2html('$(<)')"
+	Rscript -e "rmarkdown::render('$(<)')"
 
 accessingUnixCommandLine.html: accessingUnixCommandLine.md
 	echo $(<)
